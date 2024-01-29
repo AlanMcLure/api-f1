@@ -1,0 +1,98 @@
+package com.f1data.f1data.entity;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "piloto")
+public class PilotoEntity {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String nombre;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private String fecha_nac;
+
+    private String nacionalidad;
+
+    private String foto;
+
+    public PilotoEntity() {
+    }
+
+    public PilotoEntity(Long id, String nombre, String fecha_nac, String nacionalidad, String foto) {
+        this.id = id;
+        this.nombre = nombre;
+        this.fecha_nac = fecha_nac;
+        this.nacionalidad = nacionalidad;
+        this.foto = foto;
+    }
+
+    public PilotoEntity(Long id, String nombre, String fecha_nac, String nacionalidad) {
+        this.id = id;
+        this.nombre = nombre;
+        this.fecha_nac = fecha_nac;
+        this.nacionalidad = nacionalidad;
+    }
+
+    public PilotoEntity(String nombre, String fecha_nac, String nacionalidad, String foto) {
+        this.nombre = nombre;
+        this.fecha_nac = fecha_nac;
+        this.nacionalidad = nacionalidad;
+        this.foto = foto;
+    }
+
+    public PilotoEntity(String nombre, String fecha_nac, String nacionalidad) {
+        this.nombre = nombre;
+        this.fecha_nac = fecha_nac;
+        this.nacionalidad = nacionalidad;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getFecha_nac() {
+        return fecha_nac;
+    }
+
+    public void setFecha_nac(String fecha_nac) {
+        this.fecha_nac = fecha_nac;
+    }
+
+    public String getNacionalidad() {
+        return nacionalidad;
+    }
+
+    public void setNacionalidad(String nacionalidad) {
+        this.nacionalidad = nacionalidad;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+}
