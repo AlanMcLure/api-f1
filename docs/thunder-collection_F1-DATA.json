@@ -1,0 +1,95 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "F1-DATA",
+    "dateExported": "2024-01-30T22:38:53.590Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "ec0bc29c-57a2-449e-97a1-e3c1ac3edd2c",
+            "colId": "8fe3446e-a6d8-4470-9bb1-db09fd3e1714",
+            "containerId": "",
+            "name": "Get piloto",
+            "url": "http://localhost:8083/piloto/23",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-01-30T16:53:19.382Z",
+            "modified": "2024-01-30T17:02:19.480Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "56c1441c-aa63-4ba1-8c08-6c65f7cb12d6",
+            "colId": "8fe3446e-a6d8-4470-9bb1-db09fd3e1714",
+            "containerId": "",
+            "name": "Post piloto",
+            "url": "http://localhost:8083/piloto",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-01-30T16:53:56.107Z",
+            "modified": "2024-01-30T17:02:13.849Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Ayrton Senna 2\",\n  \"fecha_nac\": \"1965-02-03\",\n  \"nacionalidad\": \"Brasil\",\n  \"img\": \"ruta/iventada/fjsalkd.png\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a260e666-9a8c-443a-9f95-838fcf1e063e",
+            "colId": "8fe3446e-a6d8-4470-9bb1-db09fd3e1714",
+            "containerId": "",
+            "name": "Update piloto",
+            "url": "http://localhost:8083/piloto",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-01-30T16:58:55.813Z",
+            "modified": "2024-01-30T17:00:51.599Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 22,\n  \"nombre\": \"Ayrton Senna\",\n  \"fecha_nac\": \"1960-03-21\",\n  \"nacionalidad\": \"Brasil\",\n  \"img\": \"ruta/iventada/fjsalkd.png\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "48fb9204-1544-4d8e-bf45-447be7dc1eb6",
+            "colId": "8fe3446e-a6d8-4470-9bb1-db09fd3e1714",
+            "containerId": "",
+            "name": "Delete piloto",
+            "url": "http://localhost:8083/piloto/23",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-01-30T17:02:29.564Z",
+            "modified": "2024-01-30T17:02:40.787Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b216513e-1a7d-4e3c-848c-6837de52a166",
+            "colId": "8fe3446e-a6d8-4470-9bb1-db09fd3e1714",
+            "containerId": "",
+            "name": "Get Page piloto",
+            "url": "http://localhost:8083/piloto?page=0size=10",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-01-30T17:03:41.022Z",
+            "modified": "2024-01-30T17:05:16.378Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "0size=10",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        }
+    ]
+}

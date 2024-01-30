@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "piloto")
 public class PilotoEntity {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,17 +23,17 @@ public class PilotoEntity {
 
     private String nacionalidad;
 
-    private String foto;
+    private String img;
 
     public PilotoEntity() {
     }
 
-    public PilotoEntity(Long id, String nombre, String fecha_nac, String nacionalidad, String foto) {
+    public PilotoEntity(Long id, String nombre, String fecha_nac, String nacionalidad, String img) {
         this.id = id;
         this.nombre = nombre;
         this.fecha_nac = fecha_nac;
         this.nacionalidad = nacionalidad;
-        this.foto = foto;
+        this.img = img;
     }
 
     public PilotoEntity(Long id, String nombre, String fecha_nac, String nacionalidad) {
@@ -43,11 +43,11 @@ public class PilotoEntity {
         this.nacionalidad = nacionalidad;
     }
 
-    public PilotoEntity(String nombre, String fecha_nac, String nacionalidad, String foto) {
+    public PilotoEntity(String nombre, String fecha_nac, String nacionalidad, String img) {
         this.nombre = nombre;
         this.fecha_nac = fecha_nac;
         this.nacionalidad = nacionalidad;
-        this.foto = foto;
+        this.img = img;
     }
 
     public PilotoEntity(String nombre, String fecha_nac, String nacionalidad) {
@@ -88,11 +88,11 @@ public class PilotoEntity {
         this.nacionalidad = nacionalidad;
     }
 
-    public String getFoto() {
-        return foto;
+    public String getImg() {
+        return img;
     }
 
-    public void setFoto(String foto) {
-        this.foto = foto;
+    public void setImg(String img) {
+        this.img = img;
     }
 }
