@@ -2,12 +2,16 @@ package com.f1data.f1data.entity;
 
 import java.util.Date;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "granPremio")
 public class GranPremioEntity {
     
     @Id
@@ -28,6 +32,9 @@ public class GranPremioEntity {
     @JoinColumn(name = "circuito_id")
     private CircuitoEntity circuito;
 
+    public GranPremioEntity() {
+    }
+
     public GranPremioEntity(Long id, String nombre, Date fecha_inic, Date fecha_fin, String img_flag, String img, CircuitoEntity circuito) {
         this.id = id;
         this.nombre = nombre;
@@ -36,6 +43,30 @@ public class GranPremioEntity {
         this.img_flag = img_flag;
         this.img = img;
         this.circuito = circuito;
+    }
+
+    public GranPremioEntity(String nombre, Date fecha_inic, Date fecha_fin, String img_flag, String img, CircuitoEntity circuito) {
+        this.nombre = nombre;
+        this.fecha_inic = fecha_inic;
+        this.fecha_fin = fecha_fin;
+        this.img_flag = img_flag;
+        this.img = img;
+        this.circuito = circuito;
+    }
+
+    public GranPremioEntity(String nombre, Date fecha_inic, Date fecha_fin, String img_flag, String img) {
+        this.nombre = nombre;
+        this.fecha_inic = fecha_inic;
+        this.fecha_fin = fecha_fin;
+        this.img_flag = img_flag;
+        this.img = img;
+    }
+
+    public GranPremioEntity(String nombre, Date fecha_inic, Date fecha_fin, String img_flag) {
+        this.nombre = nombre;
+        this.fecha_inic = fecha_inic;
+        this.fecha_fin = fecha_fin;
+        this.img_flag = img_flag;
     }
 
     public Long getId() {
@@ -90,7 +121,7 @@ public class GranPremioEntity {
         return circuito;
     }
 
-    public void setCircuito_id(CircuitoEntity circuito) {
+    public void setCircuito(CircuitoEntity circuito) {
         this.circuito = circuito;
     }
 }

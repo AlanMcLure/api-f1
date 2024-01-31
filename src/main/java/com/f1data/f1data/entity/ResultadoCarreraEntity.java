@@ -11,11 +11,15 @@ public class ResultadoCarreraEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
     private boolean vuelta_rapida;
+    
     private int num_vueltas_completadas;
+    
     private double tiempo_final;
+    
     private int posicion;
+    
     private boolean dnf;
 
     @ManyToOne

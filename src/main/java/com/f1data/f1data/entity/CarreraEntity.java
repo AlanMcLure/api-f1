@@ -2,12 +2,16 @@ package com.f1data.f1data.entity;
 
 import java.time.LocalDateTime;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "carrera")
 public class CarreraEntity {
     
     @Id
@@ -15,12 +19,17 @@ public class CarreraEntity {
     private Long id;
     
     private int num_vueltas;
+
     private LocalDateTime fecha_inic;
+
     private boolean safety;
 
     @ManyToOne
     @JoinColumn(name = "gran_premio_id")
     private GranPremioEntity granPremio;
+
+    public CarreraEntity() {
+    }
 
     public CarreraEntity(Long id, int num_vueltas, LocalDateTime fecha_inic, boolean safety, GranPremioEntity granPremio) {
         this.id = id;
@@ -28,6 +37,19 @@ public class CarreraEntity {
         this.fecha_inic = fecha_inic;
         this.safety = safety;
         this.granPremio = granPremio;
+    }
+
+    public CarreraEntity(int num_vueltas, LocalDateTime fecha_inic, boolean safety, GranPremioEntity granPremio) {
+        this.num_vueltas = num_vueltas;
+        this.fecha_inic = fecha_inic;
+        this.safety = safety;
+        this.granPremio = granPremio;
+    }
+
+    public CarreraEntity(int num_vueltas, LocalDateTime fecha_inic, boolean safety) {
+        this.num_vueltas = num_vueltas;
+        this.fecha_inic = fecha_inic;
+        this.safety = safety;
     }
 
     public Long getId() {
