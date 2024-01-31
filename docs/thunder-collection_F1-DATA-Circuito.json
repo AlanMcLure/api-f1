@@ -1,0 +1,189 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "F1-DATA-Circuito",
+    "dateExported": "2024-01-31T12:43:09.610Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "433ecc3f-31dc-4d7d-916f-6ca55bcedc40",
+            "colId": "097a9168-f224-49e2-9886-643f0d49639d",
+            "containerId": "",
+            "name": "Get circuito",
+            "url": "http://localhost:8083/circuito/11",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-01-31T12:01:45.836Z",
+            "modified": "2024-01-31T12:36:13.833Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "2640edd9-729b-43cb-8872-7ec5c81e6279",
+            "colId": "097a9168-f224-49e2-9886-643f0d49639d",
+            "containerId": "",
+            "name": "Get circuito by nombre",
+            "url": "http://localhost:8083/circuito/nombre/Red Bull Ring",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-01-31T12:40:00.134Z",
+            "modified": "2024-01-31T12:40:31.325Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3e611227-0671-4855-9228-a5df53e4dcdc",
+            "colId": "097a9168-f224-49e2-9886-643f0d49639d",
+            "containerId": "",
+            "name": "Post circuito",
+            "url": "http://localhost:8083/circuito",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-01-31T12:03:33.115Z",
+            "modified": "2024-01-31T12:37:16.320Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Kartodromo Internacional Carlos Sainz\",\n  \"pais\": \"España\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "895324b5-d906-4246-8d0a-9df10e7fa147",
+            "colId": "097a9168-f224-49e2-9886-643f0d49639d",
+            "containerId": "",
+            "name": "Update circuito",
+            "url": "http://localhost:8083/circuito",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-01-31T12:14:26.714Z",
+            "modified": "2024-01-31T12:16:18.188Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 10,\n  \"nombre\": \"Kartodromo Internacional Lucas Guerrerooo\",\n  \"ciudad\": \"Valencia\",\n  \"pais\": \"España\",\n  \"region\": \"Chiva\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "3fc7e8d8-6499-4917-b6a0-a223adca66f2",
+            "colId": "097a9168-f224-49e2-9886-643f0d49639d",
+            "containerId": "",
+            "name": "Delete circuito",
+            "url": "http://localhost:8083/circuito/10",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-01-31T12:35:12.859Z",
+            "modified": "2024-01-31T12:35:59.500Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "62113450-0384-442c-bf27-8e7e8b15069a",
+            "colId": "097a9168-f224-49e2-9886-643f0d49639d",
+            "containerId": "",
+            "name": "Get Page circuito",
+            "url": "http://localhost:8083/circuito?page=0&size=10",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-01-31T12:38:00.574Z",
+            "modified": "2024-01-31T12:38:45.143Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "0",
+                    "isPath": false
+                },
+                {
+                    "name": "size",
+                    "value": "10",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "dffb6ed2-6a72-44e7-a7aa-bb8cf2034c4d",
+            "colId": "097a9168-f224-49e2-9886-643f0d49639d",
+            "containerId": "",
+            "name": "Get Page circuito by pais",
+            "url": "http://localhost:8083/circuito/pais/Italia?page=0&size=10",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-01-31T12:40:55.787Z",
+            "modified": "2024-01-31T12:41:20.957Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "0",
+                    "isPath": false
+                },
+                {
+                    "name": "size",
+                    "value": "10",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "2c9fae4e-8c8e-4daa-8d67-ad996dde958d",
+            "colId": "097a9168-f224-49e2-9886-643f0d49639d",
+            "containerId": "",
+            "name": "Get Page circuito by ciudad",
+            "url": "http://localhost:8083/circuito/ciudad/Valencia?page=0&size=10",
+            "method": "GET",
+            "sortNum": 65000,
+            "created": "2024-01-31T12:41:45.523Z",
+            "modified": "2024-01-31T12:41:57.270Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "0",
+                    "isPath": false
+                },
+                {
+                    "name": "size",
+                    "value": "10",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "9ec485f7-1054-4ffc-9272-9d6bb8883e4a",
+            "colId": "097a9168-f224-49e2-9886-643f0d49639d",
+            "containerId": "",
+            "name": "Get Page circuito by region",
+            "url": "http://localhost:8083/circuito/region/Cataluña?page=0&size=10",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-01-31T12:41:42.843Z",
+            "modified": "2024-01-31T12:42:30.814Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "0",
+                    "isPath": false
+                },
+                {
+                    "name": "size",
+                    "value": "10",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        }
+    ]
+}

@@ -1,0 +1,195 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "F1-DATA-Piloto",
+    "dateExported": "2024-01-31T12:42:45.003Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "8729c344-6091-4e6a-9d8d-9167cd87a2db",
+            "colId": "1ee9a3f0-4123-4929-8b7b-e35041a107bf",
+            "containerId": "",
+            "name": "Get piloto",
+            "url": "http://localhost:8083/piloto/1",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-01-31T08:07:10.879Z",
+            "modified": "2024-01-31T08:08:30.285Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8d4a6ba5-36cb-40d8-9399-7aa38ec3bef6",
+            "colId": "1ee9a3f0-4123-4929-8b7b-e35041a107bf",
+            "containerId": "",
+            "name": "Get piloto by nombre",
+            "url": "http://localhost:8083/piloto/nombre/Kimi",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-01-31T08:29:26.415Z",
+            "modified": "2024-01-31T08:47:23.173Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1d1452a0-9e57-4d37-9efc-1c6b9a1301d3",
+            "colId": "1ee9a3f0-4123-4929-8b7b-e35041a107bf",
+            "containerId": "",
+            "name": "Get pilotos por temporada",
+            "url": "http://localhost:8083/piloto/temporada/2021",
+            "method": "GET",
+            "sortNum": 17500,
+            "created": "2024-01-31T09:06:59.638Z",
+            "modified": "2024-01-31T09:07:16.235Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6caf6e48-5b12-455f-b213-a34ac320d089",
+            "colId": "1ee9a3f0-4123-4929-8b7b-e35041a107bf",
+            "containerId": "",
+            "name": "Post piloto",
+            "url": "http://localhost:8083/piloto",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-01-31T08:07:10.880Z",
+            "modified": "2024-01-31T08:27:18.206Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Ayrton Senna\",\n  \"fecha_nac\": \"1965-02-03\",\n  \"nacionalidad\": \"Brasil\",\n  \"img\": \"ruta/iventada/fjsalkd.png\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b1b82e8a-b5eb-40d4-b5c6-45492f4db4aa",
+            "colId": "1ee9a3f0-4123-4929-8b7b-e35041a107bf",
+            "containerId": "",
+            "name": "Update piloto",
+            "url": "http://localhost:8083/piloto",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-01-31T08:07:10.881Z",
+            "modified": "2024-01-31T08:07:10.881Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 22,\n  \"nombre\": \"Ayrton Senna\",\n  \"fecha_nac\": \"1960-03-21\",\n  \"nacionalidad\": \"Brasil\",\n  \"img\": \"ruta/iventada/fjsalkd.png\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "da9121cb-b29f-4ca5-8f6d-3a2a4d84329e",
+            "colId": "1ee9a3f0-4123-4929-8b7b-e35041a107bf",
+            "containerId": "",
+            "name": "Delete piloto",
+            "url": "http://localhost:8083/piloto/23",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-01-31T08:07:10.882Z",
+            "modified": "2024-01-31T08:07:10.882Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a625f968-dff3-4a4d-908d-6ec340497c4c",
+            "colId": "1ee9a3f0-4123-4929-8b7b-e35041a107bf",
+            "containerId": "",
+            "name": "Get Page piloto",
+            "url": "http://localhost:8083/piloto?page=1&size=10",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-01-31T08:07:10.883Z",
+            "modified": "2024-01-31T10:29:15.231Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "size",
+                    "value": "10",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "2af2670f-53d2-4770-a641-c9b415259dd1",
+            "colId": "1ee9a3f0-4123-4929-8b7b-e35041a107bf",
+            "containerId": "",
+            "name": "Get Page piloto por nacionalidad",
+            "url": "http://localhost:8083/piloto/nacionalidad/Finlandia?page=0&size=10",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-01-31T08:48:33.870Z",
+            "modified": "2024-01-31T10:29:34.912Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "0",
+                    "isPath": false
+                },
+                {
+                    "name": "size",
+                    "value": "10",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "6b08d0d0-f2fd-40ca-801a-7b79ebdf66c2",
+            "colId": "1ee9a3f0-4123-4929-8b7b-e35041a107bf",
+            "containerId": "",
+            "name": "Get Page pilotos ganadores",
+            "url": "http://localhost:8083/piloto/ganadores",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-01-31T08:53:03.306Z",
+            "modified": "2024-01-31T08:53:12.602Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "48f817b8-efb8-417e-9c25-144dcaee482d",
+            "colId": "1ee9a3f0-4123-4929-8b7b-e35041a107bf",
+            "containerId": "",
+            "name": "Get Page pilotos con podio",
+            "url": "http://localhost:8083/piloto/podio",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-01-31T08:57:31.929Z",
+            "modified": "2024-01-31T08:57:38.497Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "222c0078-969f-4ecf-9316-d3d64afc7b48",
+            "colId": "1ee9a3f0-4123-4929-8b7b-e35041a107bf",
+            "containerId": "",
+            "name": "Get Page pilotos por edad",
+            "url": "http://localhost:8083/piloto/edad/42",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2024-01-31T10:42:43.896Z",
+            "modified": "2024-01-31T11:21:29.782Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

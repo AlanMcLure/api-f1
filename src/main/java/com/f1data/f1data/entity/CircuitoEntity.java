@@ -1,9 +1,13 @@
 package com.f1data.f1data.entity;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "circuito")
 public class CircuitoEntity {
     
     @Id
@@ -15,12 +19,33 @@ public class CircuitoEntity {
     private String pais;
     private String region;
 
+    public CircuitoEntity() {
+    }
+    
     public CircuitoEntity(Long id, String nombre, String ciudad, String pais, String region) {
         this.id = id;
         this.nombre = nombre;
         this.ciudad = ciudad;
         this.pais = pais;
         this.region = region;
+    }
+
+    public CircuitoEntity(String nombre, String ciudad, String pais, String region) {
+        this.nombre = nombre;
+        this.ciudad = ciudad;
+        this.pais = pais;
+        this.region = region;
+    }
+
+    public CircuitoEntity(String nombre, String ciudad, String pais) {
+        this.nombre = nombre;
+        this.ciudad = ciudad;
+        this.pais = pais;
+    }
+
+    public CircuitoEntity(String nombre, String ciudad) {
+        this.nombre = nombre;
+        this.ciudad = ciudad;
     }
 
     public Long getId() {
