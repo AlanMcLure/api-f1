@@ -2,6 +2,7 @@ package com.f1data.f1data.entity;
 
 import java.time.LocalDateTime;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,12 +14,13 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "carrera")
 public class CarreraEntity {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
-    private int num_vueltas;
+
+    @Column(name = "num_vueltas")
+    private int numVueltas;
 
     private LocalDateTime fecha_inic;
 
@@ -31,23 +33,24 @@ public class CarreraEntity {
     public CarreraEntity() {
     }
 
-    public CarreraEntity(Long id, int num_vueltas, LocalDateTime fecha_inic, boolean safety, GranPremioEntity granPremio) {
+    public CarreraEntity(Long id, int numVueltas, LocalDateTime fecha_inic, boolean safety,
+            GranPremioEntity granPremio) {
         this.id = id;
-        this.num_vueltas = num_vueltas;
+        this.numVueltas = numVueltas;
         this.fecha_inic = fecha_inic;
         this.safety = safety;
         this.granPremio = granPremio;
     }
 
-    public CarreraEntity(int num_vueltas, LocalDateTime fecha_inic, boolean safety, GranPremioEntity granPremio) {
-        this.num_vueltas = num_vueltas;
+    public CarreraEntity(int numVueltas, LocalDateTime fecha_inic, boolean safety, GranPremioEntity granPremio) {
+        this.numVueltas = numVueltas;
         this.fecha_inic = fecha_inic;
         this.safety = safety;
         this.granPremio = granPremio;
     }
 
-    public CarreraEntity(int num_vueltas, LocalDateTime fecha_inic, boolean safety) {
-        this.num_vueltas = num_vueltas;
+    public CarreraEntity(int numVueltas, LocalDateTime fecha_inic, boolean safety) {
+        this.numVueltas = numVueltas;
         this.fecha_inic = fecha_inic;
         this.safety = safety;
     }
@@ -60,19 +63,19 @@ public class CarreraEntity {
         this.id = id;
     }
 
-    public int getNum_vueltas() {
-        return num_vueltas;
+    public int getNumVueltas() {
+        return numVueltas;
     }
 
-    public void setNum_vueltas(int num_vueltas) {
-        this.num_vueltas = num_vueltas;
+    public void setNumVueltas(int numVueltas) {
+        this.numVueltas = numVueltas;
     }
 
-    public LocalDateTime getFecha_inic() {
+    public LocalDateTime getFechaInic() {
         return fecha_inic;
     }
 
-    public void setFecha_inic(LocalDateTime fecha_inic) {
+    public void setFechaInic(LocalDateTime fecha_inic) {
         this.fecha_inic = fecha_inic;
     }
 
