@@ -1,5 +1,7 @@
 package com.f1data.f1data.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -19,10 +21,37 @@ public class PilotoService {
         return oPilotoRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Piloto no encontrado"));
     }
 
+    public PilotoEntity getByNombre(String nombre) {
+        return oPilotoRepository.findByNombre(nombre).orElseThrow(() -> new ResourceNotFoundException("Piloto no encontrado"));
+    }
+
+    /* public Page<PilotoEntity> getPilotosPorTemporada(int anyo, Pageable oPageable) {
+        return oPilotoRepository.findPilotosPorTemporada(anyo, oPageable);
+    } */
+    public List<PilotoEntity> getPilotosPorTemporada(int anyo) {
+        return oPilotoRepository.findPilotosPorTemporada(anyo);
+    }
+    
     public Page<PilotoEntity> getPage(Pageable oPageable) {
         return oPilotoRepository.findAll(oPageable);
     }
 
+    public Page<PilotoEntity> getByNacionalidad(String nacionalidad, Pageable oPageable) {
+        return oPilotoRepository.findByNacionalidadContaining(nacionalidad, oPageable);
+    }
+
+    public Page<PilotoEntity> getPilotosGanadores(Pageable oPageable) {
+        return oPilotoRepository.findPilotosGanadores(oPageable);
+    }
+
+    public Page<PilotoEntity> getPilotosPodio(Pageable oPageable) {
+        return oPilotoRepository.findPilotosPodio(oPageable);
+    }
+
+    public Page<PilotoEntity> getPilotosPorEdad(int edad, Pageable oPageable) {
+        return oPilotoRepository.findPilotosPorEdad(edad, oPageable);
+    }
+    
     public Long create(PilotoEntity oPilotoEntity) {
         return oPilotoRepository.save(oPilotoEntity).getId();
     }

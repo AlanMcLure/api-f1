@@ -1,8 +1,13 @@
 package com.f1data.f1data.api;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -30,6 +35,23 @@ public class PilotoApi {
         return ResponseEntity.ok(oPilotoService.get(id));
     }
 
+    @GetMapping("/nombre/{nombre}")
+    public ResponseEntity<PilotoEntity> getByNombre(@PathVariable("nombre") String nombre) {
+        return ResponseEntity.ok(oPilotoService.getByNombre(nombre));
+    }
+    /* @GetMapping("/nombre/{nombre}")
+    public ResponseEntity<PilotoEntity> getByNombre(@PathVariable("nombre") String nombre) {
+        try {
+            String nombreDecodificado = URLDecoder.decode(nombre, "UTF-8");
+            return ResponseEntity.ok(oPilotoService.getByNombre(nombreDecodificado));
+        } catch (UnsupportedEncodingException e) {
+            // Manejar la excepción de codificación no compatible
+            // Puedes imprimir un mensaje de error o realizar alguna otra acción apropiada
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    } */
+
     @PostMapping("")
     public ResponseEntity<Long> create(@RequestBody PilotoEntity oPilotoEntity) {
         return ResponseEntity.ok(oPilotoService.create(oPilotoEntity));
@@ -48,6 +70,35 @@ public class PilotoApi {
     @GetMapping("")
     public ResponseEntity<Page<PilotoEntity>> getPage(Pageable oPageable) {
         return ResponseEntity.ok(oPilotoService.getPage(oPageable));
+    }
+
+    @GetMapping("/nacionalidad/{nacionalidad}")
+    public ResponseEntity<Page<PilotoEntity>> getByNacionalidad(@PathVariable("nacionalidad") String nacionalidad, Pageable oPageable) {
+        return ResponseEntity.ok(oPilotoService.getByNacionalidad(nacionalidad, oPageable));
+    }
+
+    @GetMapping("/ganadores")
+    public ResponseEntity<Page<PilotoEntity>> getPilotosGanadores(Pageable oPageable) {
+        return ResponseEntity.ok(oPilotoService.getPilotosGanadores(oPageable));
+    }
+
+    @GetMapping("/podio")
+    public ResponseEntity<Page<PilotoEntity>> getPilotosPodio(Pageable oPageable) {
+        return ResponseEntity.ok(oPilotoService.getPilotosPodio(oPageable));
+    }
+
+    /* @GetMapping("/temporada/{anyo}")
+    public ResponseEntity<Page<PilotoEntity>> getPilotosPorTemporada(@PathVariable("anyo") int anyo, Pageable oPageable) {
+        return ResponseEntity.ok(oPilotoService.getPilotosPorTemporada(anyo, oPageable));
+    } */
+    @GetMapping("/temporada/{anyo}")
+    public ResponseEntity<List<PilotoEntity>> getPilotosPorTemporada(@PathVariable("anyo") int anyo) {
+        return ResponseEntity.ok(oPilotoService.getPilotosPorTemporada(anyo));
+    }
+
+    @GetMapping("/edad/{edad}")
+    public ResponseEntity<Page<PilotoEntity>> getPilotosPorEdad(@PathVariable("edad") int edad, Pageable oPageable) {
+        return ResponseEntity.ok(oPilotoService.getPilotosPorEdad(edad, oPageable));
     }
 
 }
