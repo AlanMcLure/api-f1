@@ -1,0 +1,228 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "F1-DATA-ResultadoCarrera",
+    "dateExported": "2024-01-31T19:31:40.818Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "daf9343f-7036-4bb7-a18a-d25b1eb20129",
+            "colId": "e6950d1a-d0ca-4a1a-94cb-f0392c0a6c22",
+            "containerId": "",
+            "name": "Get resultadocarrera",
+            "url": "http://localhost:8083/resultadocarrera/2",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-01-31T18:26:15.869Z",
+            "modified": "2024-01-31T18:30:44.637Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "aa40432f-b3e8-4080-8044-a76bc33720b8",
+            "colId": "e6950d1a-d0ca-4a1a-94cb-f0392c0a6c22",
+            "containerId": "",
+            "name": "Get resultadocarrera by carrera y piloto",
+            "url": "http://localhost:8083/resultadocarrera/carrera/1/piloto/1",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-01-31T18:52:20.018Z",
+            "modified": "2024-01-31T18:52:45.913Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "690e43d7-2a2d-4650-af6d-1b541da182b5",
+            "colId": "e6950d1a-d0ca-4a1a-94cb-f0392c0a6c22",
+            "containerId": "",
+            "name": "Get resultadocarrera by carrera y posicion",
+            "url": "http://localhost:8083/resultadocarrera/carrera/1/posicion/3",
+            "method": "GET",
+            "sortNum": 17500,
+            "created": "2024-01-31T18:52:22.660Z",
+            "modified": "2024-01-31T18:55:10.136Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7aa02504-9260-4f37-b198-8960871b0b00",
+            "colId": "e6950d1a-d0ca-4a1a-94cb-f0392c0a6c22",
+            "containerId": "",
+            "name": "Post resultadocarrera",
+            "url": "http://localhost:8083/resultadocarrera",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-01-31T18:32:37.485Z",
+            "modified": "2024-01-31T18:48:52.062Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"vuelta_rapida\": false,\n  \"num_vueltas_completadas\": 56,\n  \"tiempo_final\": 5000.234,\n  \"posicion\": 2,\n  \"dnf\": false,\n  \"piloto\": {\n    \"id\": 21\n  },\n  \"carrera\": {\n    \"id\": 1\n  }\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "097013a5-f0a2-4300-8a29-79085638f702",
+            "colId": "e6950d1a-d0ca-4a1a-94cb-f0392c0a6c22",
+            "containerId": "",
+            "name": "Put resultadocarrera",
+            "url": "http://localhost:8083/resultadocarrera",
+            "method": "PUT",
+            "sortNum": 25000,
+            "created": "2024-01-31T18:50:23.782Z",
+            "modified": "2024-01-31T18:51:39.472Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 23,\n  \"vuelta_rapida\": false,\n  \"num_vueltas_completadas\": 56,\n  \"tiempo_final\": 5030.234,\n  \"posicion\": 2,\n  \"dnf\": false,\n  \"piloto\": {\n    \"id\": 21\n  },\n  \"carrera\": {\n    \"id\": 1\n  }\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "1b7e88c2-73ef-4c40-b02b-a9a3b927e0fb",
+            "colId": "e6950d1a-d0ca-4a1a-94cb-f0392c0a6c22",
+            "containerId": "",
+            "name": "Delete ResultadoCarrera",
+            "url": "http://localhost:8083/resultadocarrera/22",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2024-01-31T18:35:46.224Z",
+            "modified": "2024-01-31T18:49:19.459Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "49d048ac-3a7c-4119-8f1a-72cfdc1bc2d9",
+            "colId": "e6950d1a-d0ca-4a1a-94cb-f0392c0a6c22",
+            "containerId": "",
+            "name": "Get Page resultadocarrera",
+            "url": "http://localhost:8083/resultadocarrera?page=0&size=5",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-01-31T19:09:07.917Z",
+            "modified": "2024-01-31T19:09:38.796Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "0",
+                    "isPath": false
+                },
+                {
+                    "name": "size",
+                    "value": "5",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "d224e3bb-f133-40a1-8565-905e6631ef15",
+            "colId": "e6950d1a-d0ca-4a1a-94cb-f0392c0a6c22",
+            "containerId": "",
+            "name": "Get Page resultadocarrera by carrera",
+            "url": "http://localhost:8083/resultadocarrera/carrera/2?page=0&size=5",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-01-31T19:11:04.594Z",
+            "modified": "2024-01-31T19:11:23.221Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "0",
+                    "isPath": false
+                },
+                {
+                    "name": "size",
+                    "value": "5",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "cae7c605-1f06-414b-ae25-c1cfc80ae1d2",
+            "colId": "e6950d1a-d0ca-4a1a-94cb-f0392c0a6c22",
+            "containerId": "",
+            "name": "Get Page resultadocarrera by piloto",
+            "url": "http://localhost:8083/resultadocarrera/piloto/3?page=0&size=5",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-01-31T19:12:00.813Z",
+            "modified": "2024-01-31T19:12:29.165Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "0",
+                    "isPath": false
+                },
+                {
+                    "name": "size",
+                    "value": "5",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "18f2e617-0635-41dd-8963-6d7b833d7217",
+            "colId": "e6950d1a-d0ca-4a1a-94cb-f0392c0a6c22",
+            "containerId": "",
+            "name": "Get Page resultadocarrera by anyo",
+            "url": "http://localhost:8083/resultadocarrera/anyo/2021/piloto/2?page=0&size=5",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-01-31T19:12:56.771Z",
+            "modified": "2024-01-31T19:29:36.496Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "0",
+                    "isPath": false
+                },
+                {
+                    "name": "size",
+                    "value": "5",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "8150f0d1-75dd-4fdd-8ebd-b35e3ab0f2d9",
+            "colId": "e6950d1a-d0ca-4a1a-94cb-f0392c0a6c22",
+            "containerId": "",
+            "name": "Get Page resultadocarrera by anyo y piloto",
+            "url": "http://localhost:8083/resultadocarrera/anyo/2021?page=0&size=5",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-01-31T19:29:22.643Z",
+            "modified": "2024-01-31T19:29:22.643Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "0",
+                    "isPath": false
+                },
+                {
+                    "name": "size",
+                    "value": "5",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        }
+    ]
+}

@@ -1,0 +1,125 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "F1-DATA-Carrera",
+    "dateExported": "2024-01-31T19:31:35.147Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "0c4ad936-0fb0-4459-83f8-73f429bb55e8",
+            "colId": "297f97b1-3883-4721-9b23-1669d208d3f1",
+            "containerId": "",
+            "name": "Get carrera",
+            "url": "http://localhost:8083/carrera/2",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-01-31T16:38:07.853Z",
+            "modified": "2024-01-31T16:38:26.413Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "32a60353-9514-49db-8c8a-625b9ebf0c26",
+            "colId": "297f97b1-3883-4721-9b23-1669d208d3f1",
+            "containerId": "",
+            "name": "Post carrera",
+            "url": "http://localhost:8083/carrera",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-01-31T16:39:13.250Z",
+            "modified": "2024-01-31T16:41:12.551Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"numVueltas\": 63,\n  \"safety\": true,\n  \"granPremio\": {\n    \"id\": 2,\n    \"circuito\": {\n      \"id\": 5\n      }\n  },\n  \"fechaInic\": \"2021-09-18T16:00:00\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "722fd948-4a1b-4c82-8cd1-4c6b145e4f0c",
+            "colId": "297f97b1-3883-4721-9b23-1669d208d3f1",
+            "containerId": "",
+            "name": "Put carrera",
+            "url": "http://localhost:8083/carrera",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-01-31T16:49:39.617Z",
+            "modified": "2024-01-31T16:50:16.018Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 12,\n  \"numVueltas\": 64,\n  \"safety\": true,\n  \"granPremio\": {\n    \"id\": 2,\n    \"circuito\": {\n      \"id\": 5\n      }\n  },\n  \"fechaInic\": \"2021-09-18T16:00:00\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "c37b3883-aa8d-482c-a723-059312744dbb",
+            "colId": "297f97b1-3883-4721-9b23-1669d208d3f1",
+            "containerId": "",
+            "name": "Delete carrera",
+            "url": "http://localhost:8083/carrera/12",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-01-31T16:54:11.677Z",
+            "modified": "2024-01-31T16:54:26.159Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1124ab22-23f8-4410-99e2-23b333b3a188",
+            "colId": "297f97b1-3883-4721-9b23-1669d208d3f1",
+            "containerId": "",
+            "name": "Get Page carrera",
+            "url": "http://localhost:8083/carrera?page=0&size=5",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-01-31T16:54:40.022Z",
+            "modified": "2024-01-31T16:54:57.235Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "0",
+                    "isPath": false
+                },
+                {
+                    "name": "size",
+                    "value": "5",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "05b8d2dd-eeb9-42c6-bdff-5927d29209fd",
+            "colId": "297f97b1-3883-4721-9b23-1669d208d3f1",
+            "containerId": "",
+            "name": "Get Page carrera by vueltas",
+            "url": "http://localhost:8083/carrera/vueltas/71?page=0&size=5",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-01-31T16:55:12.182Z",
+            "modified": "2024-01-31T16:55:36.978Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "0",
+                    "isPath": false
+                },
+                {
+                    "name": "size",
+                    "value": "5",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        }
+    ]
+}

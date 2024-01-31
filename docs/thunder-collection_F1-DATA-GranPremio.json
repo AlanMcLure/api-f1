@@ -1,0 +1,125 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "F1-DATA-GranPremio",
+    "dateExported": "2024-01-31T19:31:28.803Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "13e6086c-c4bd-4fdd-8b02-c107065ec79a",
+            "colId": "fbd21174-45cc-44c5-8887-d82c7c95e576",
+            "containerId": "",
+            "name": "Get granpremio",
+            "url": "http://localhost:8083/granpremio/11",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-01-31T15:15:50.705Z",
+            "modified": "2024-01-31T15:29:44.225Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "52bc5dc1-db93-40f8-831e-52cfce2955ed",
+            "colId": "fbd21174-45cc-44c5-8887-d82c7c95e576",
+            "containerId": "",
+            "name": "Post granpremio",
+            "url": "http://localhost:8083/granpremio",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-01-31T15:26:07.337Z",
+            "modified": "2024-01-31T15:26:46.398Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Gran Premio de Emilia Romaña 2\",\n  \"fecha_inic\": \"2021-04-17T22:00:00.000+00:00\",\n  \"fecha_fin\": \"2021-04-17T22:00:00.000+00:00\",\n  \"img_flag\": \"/ruta/inventada/imola.png\",\n  \"img\": \"/ruta/inventada/imola_circuito.png\",\n  \"circuito\": {\n    \"id\": 2\n  }\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "32dbd2b6-d533-49cb-aa28-9e39758768f8",
+            "colId": "fbd21174-45cc-44c5-8887-d82c7c95e576",
+            "containerId": "",
+            "name": "Put granpremio",
+            "url": "http://localhost:8083/granpremio",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-01-31T15:27:15.361Z",
+            "modified": "2024-01-31T15:27:44.995Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 11,\n  \"nombre\": \"Gran Premio de Emilia Romaña 2 modificao\",\n  \"fecha_inic\": \"2021-04-17T22:00:00.000+00:00\",\n  \"fecha_fin\": \"2021-04-17T22:00:00.000+00:00\",\n  \"img_flag\": \"/ruta/inventada/imola.png\",\n  \"img\": \"/ruta/inventada/imola_circuito.png\",\n  \"circuito\": {\n    \"id\": 3\n  }\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6a14e602-f7be-4455-9290-de3c7c2198d0",
+            "colId": "fbd21174-45cc-44c5-8887-d82c7c95e576",
+            "containerId": "",
+            "name": "Delete granpremio",
+            "url": "http://localhost:8083/granpremio/11",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-01-31T15:29:21.543Z",
+            "modified": "2024-01-31T15:29:34.792Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a6b3b995-2cf7-4586-ad09-7278640c62ab",
+            "colId": "fbd21174-45cc-44c5-8887-d82c7c95e576",
+            "containerId": "",
+            "name": "Get Page granpremio",
+            "url": "http://localhost:8083/granpremio?page=0&size=10",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-01-31T15:31:01.947Z",
+            "modified": "2024-01-31T15:34:08.325Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "0",
+                    "isPath": false
+                },
+                {
+                    "name": "size",
+                    "value": "10",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "3042347f-c4b1-416a-b146-05a71778f428",
+            "colId": "fbd21174-45cc-44c5-8887-d82c7c95e576",
+            "containerId": "",
+            "name": "Get Page granpremio by anyo",
+            "url": "http://localhost:8083/granpremio/anyo/2021?page=0&size=5",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-01-31T15:36:20.534Z",
+            "modified": "2024-01-31T15:40:55.072Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "0",
+                    "isPath": false
+                },
+                {
+                    "name": "size",
+                    "value": "5",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        }
+    ]
+}
