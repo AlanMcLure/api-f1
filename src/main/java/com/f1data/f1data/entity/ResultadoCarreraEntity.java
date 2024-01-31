@@ -1,25 +1,29 @@
 package com.f1data.f1data.entity;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "resultado_carrera")
 public class ResultadoCarreraEntity {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     private boolean vuelta_rapida;
-    
+
     private int num_vueltas_completadas;
-    
-    private double tiempo_final;
-    
+
+    private Double tiempo_final;
+
     private int posicion;
-    
+
     private boolean dnf;
 
     @ManyToOne
@@ -30,13 +34,34 @@ public class ResultadoCarreraEntity {
     @JoinColumn(name = "carrera_id")
     private CarreraEntity carrera;
 
-    public ResultadoCarreraEntity(Long id, boolean vuelta_rapida, int num_vueltas_completadas, double tiempo_final, int posicion, boolean dnf, PilotoEntity piloto, CarreraEntity carrera) {
+    public ResultadoCarreraEntity() {
+    }
+
+    public ResultadoCarreraEntity(Long id, boolean vuelta_rapida, int num_vueltas_completadas, Double tiempo_final,
+            int posicion, boolean dnf, PilotoEntity piloto, CarreraEntity carrera) {
         this.id = id;
         this.vuelta_rapida = vuelta_rapida;
         this.num_vueltas_completadas = num_vueltas_completadas;
         this.tiempo_final = tiempo_final;
         this.posicion = posicion;
         this.dnf = dnf;
+        this.piloto = piloto;
+        this.carrera = carrera;
+    }
+
+    public ResultadoCarreraEntity(boolean vuelta_rapida, int num_vueltas_completadas, Double tiempo_final, int posicion,
+            boolean dnf, PilotoEntity piloto, CarreraEntity carrera) {
+        this.vuelta_rapida = vuelta_rapida;
+        this.num_vueltas_completadas = num_vueltas_completadas;
+        this.tiempo_final = tiempo_final;
+        this.posicion = posicion;
+        this.dnf = dnf;
+        this.piloto = piloto;
+        this.carrera = carrera;
+    }
+
+    public ResultadoCarreraEntity(int posicion, PilotoEntity piloto, CarreraEntity carrera) {
+        this.posicion = posicion;
         this.piloto = piloto;
         this.carrera = carrera;
     }
@@ -65,11 +90,11 @@ public class ResultadoCarreraEntity {
         this.num_vueltas_completadas = num_vueltas_completadas;
     }
 
-    public double getTiempo_final() {
+    public Double getTiempo_final() {
         return tiempo_final;
     }
 
-    public void setTiempo_final(double tiempo_final) {
+    public void setTiempo_final(Double tiempo_final) {
         this.tiempo_final = tiempo_final;
     }
 
