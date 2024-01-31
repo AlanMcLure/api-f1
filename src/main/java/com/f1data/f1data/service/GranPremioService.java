@@ -11,15 +11,22 @@ import com.f1data.f1data.repository.GranPremioRepository;
 
 @Service
 public class GranPremioService {
-    
-    @Autowired GranPremioRepository oGranPremioRepository;
+
+    @Autowired
+    GranPremioRepository oGranPremioRepository;
 
     public GranPremioEntity get(Long id) {
-        return oGranPremioRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Gran Premio no encontrado"));
+        return oGranPremioRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Gran Premio no encontrado"));
     }
-    
+
     public GranPremioEntity getGranPremioByNombre(String nombre) {
-        return oGranPremioRepository.findByNombre(nombre).orElseThrow(() -> new ResourceNotFoundException("Gran Premio no encontrado"));
+        return oGranPremioRepository.findByNombre(nombre)
+                .orElseThrow(() -> new ResourceNotFoundException("Gran Premio no encontrado"));
+    }
+
+    public Page<GranPremioEntity> getPage(Pageable oPageable) {
+        return oGranPremioRepository.findAll(oPageable);
     }
 
     public Page<GranPremioEntity> getGranPremioByYear(int year, Pageable oPageable) {

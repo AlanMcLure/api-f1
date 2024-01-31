@@ -14,9 +14,9 @@ import com.f1data.f1data.entity.GranPremioEntity;
 
 @Repository
 public interface GranPremioRepository extends JpaRepository<GranPremioEntity, Long> {
-    
+
     Optional<GranPremioEntity> findByNombre(String nombre);
 
-    @Query(value = "SELECT gp.* FROM granPremio gp WHERE YEAR(gp.fecha_inic) = :year", nativeQuery = true)
+    @Query(value = "SELECT * FROM gran_premio gp WHERE YEAR(gp.fecha_inic) = :year", nativeQuery = true)
     Page<GranPremioEntity> findByYear(int year, Pageable oPageable);
 }

@@ -35,7 +35,7 @@ CREATE TABLE circuito (
 );
 
 -- Tabla Gran Premio
-CREATE TABLE granPremio (
+CREATE TABLE gran_premio (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(100) NOT NULL,
     fecha_inic DATE UNIQUE,
@@ -48,7 +48,7 @@ CREATE TABLE granPremio (
 );
 
 -- Tabla PilotoEquipo
-CREATE TABLE pilotoEquipo (
+CREATE TABLE piloto_equipo (
     id INT PRIMARY KEY AUTO_INCREMENT,
     piloto_id INT,
     equipo_id INT,
@@ -78,7 +78,7 @@ CREATE TABLE carrera (
     fecha_inic DATETIME UNIQUE,
     safety BOOLEAN,
     gran_premio_id INT,
-    FOREIGN KEY (gran_premio_id) REFERENCES granPremio(id)
+    FOREIGN KEY (gran_premio_id) REFERENCES gran_premio(id)
 );
 
 -- Tabla Clasificacion
@@ -86,11 +86,11 @@ CREATE TABLE clasificacion (
     id INT PRIMARY KEY AUTO_INCREMENT,
     fecha_inic DATETIME UNIQUE,
     gran_premio_id INT,
-    FOREIGN KEY (gran_premio_id) REFERENCES granPremio(id)
+    FOREIGN KEY (gran_premio_id) REFERENCES gran_premio(id)
 );
 
 -- Tabla ResultadoCarrera
-CREATE TABLE resultadoCarrera (
+CREATE TABLE resultado_carrera (
     id INT PRIMARY KEY AUTO_INCREMENT,
     vuelta_rapida BOOLEAN,
     num_vueltas_completadas INT,
@@ -104,7 +104,7 @@ CREATE TABLE resultadoCarrera (
 );
 
 -- Tabla ResultadoClasificacion
-CREATE TABLE ResultadoClasificacion (
+CREATE TABLE Resultado_clasificacion (
     id INT PRIMARY KEY AUTO_INCREMENT,
     vuelta_q1 DECIMAL(10,3),
     vuelta_q2 DECIMAL(10,3),
@@ -156,8 +156,8 @@ VALUES
   ('Haas F1 Team', '2016-01-01', 'Estados Unidos', '/ruta/inventada/haas.png'),
   ('Williams Racing', '1977-01-01', 'Reino Unido', '/ruta/inventada/williams.png');
 
--- Insertar datos aproximados en PilotoEquipo (basado en información histórica hasta 2022)
-INSERT INTO pilotoEquipo (piloto_id, equipo_id, fecha_inic, fecha_fin)
+-- Insertar datos aproximados en piloto_equipo (basado en información histórica hasta 2022)
+INSERT INTO piloto_equipo (piloto_id, equipo_id, fecha_inic, fecha_fin)
 VALUES
   -- Lewis Hamilton
   (1, 4, '2007-01-01', '2012-12-31'),
@@ -219,8 +219,8 @@ VALUES
 -- Continuar insertando según sea necesario para otros circuitos
 
 
--- Insertar datos ficticios en GranPremio para la temporada 2021
-INSERT INTO granPremio (nombre, fecha_inic, fecha_fin, img_flag, img, circuito_id)
+-- Insertar datos ficticios en gran_premio para la temporada 2021
+INSERT INTO gran_premio (nombre, fecha_inic, fecha_fin, img_flag, img, circuito_id)
 VALUES
   ('Gran Premio de Bahréin', '2021-03-28', '2021-03-28', '/ruta/inventada/bahrain.png', '/ruta/inventada/bahrain_circuito.png', 1),
   ('Gran Premio de Emilia Romaña', '2021-04-18', '2021-04-18', '/ruta/inventada/imola.png', '/ruta/inventada/imola_circuito.png', 2),
@@ -267,8 +267,8 @@ VALUES
 
 -- Continuar insertando según sea necesario para otras sesiones de clasificación
 
--- Insertar datos ficticios en ResultadoCarrera para algunos Grandes Premios de la temporada 2021
-INSERT INTO resultadoCarrera (vuelta_rapida, num_vueltas_completadas, posicion, dnf, piloto_id, carrera_id)
+-- Insertar datos ficticios en resultado_carrera para algunos Grandes Premios de la temporada 2021
+INSERT INTO resultado_carrera (vuelta_rapida, num_vueltas_completadas, posicion, dnf, piloto_id, carrera_id)
 VALUES
     (TRUE, 56, 1, FALSE, 1, 1),
     (FALSE, 56, 2, FALSE, 2, 1),

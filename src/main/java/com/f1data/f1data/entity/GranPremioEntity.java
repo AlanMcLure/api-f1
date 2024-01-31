@@ -11,23 +11,23 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "granPremio")
+@Table(name = "gran_premio")
 public class GranPremioEntity {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nombre;
-    
+
     private Date fecha_inic;
-    
+
     private Date fecha_fin;
-    
+
     private String img_flag;
-    
+
     private String img;
-    
+
     @ManyToOne
     @JoinColumn(name = "circuito_id")
     private CircuitoEntity circuito;
@@ -35,7 +35,8 @@ public class GranPremioEntity {
     public GranPremioEntity() {
     }
 
-    public GranPremioEntity(Long id, String nombre, Date fecha_inic, Date fecha_fin, String img_flag, String img, CircuitoEntity circuito) {
+    public GranPremioEntity(Long id, String nombre, Date fecha_inic, Date fecha_fin, String img_flag, String img,
+            CircuitoEntity circuito) {
         this.id = id;
         this.nombre = nombre;
         this.fecha_inic = fecha_inic;
@@ -45,7 +46,8 @@ public class GranPremioEntity {
         this.circuito = circuito;
     }
 
-    public GranPremioEntity(String nombre, Date fecha_inic, Date fecha_fin, String img_flag, String img, CircuitoEntity circuito) {
+    public GranPremioEntity(String nombre, Date fecha_inic, Date fecha_fin, String img_flag, String img,
+            CircuitoEntity circuito) {
         this.nombre = nombre;
         this.fecha_inic = fecha_inic;
         this.fecha_fin = fecha_fin;
