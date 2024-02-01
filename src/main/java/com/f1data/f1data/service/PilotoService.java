@@ -25,11 +25,8 @@ public class PilotoService {
         return oPilotoRepository.findByNombre(nombre).orElseThrow(() -> new ResourceNotFoundException("Piloto no encontrado"));
     }
 
-    /* public Page<PilotoEntity> getPilotosPorTemporada(int anyo, Pageable oPageable) {
+    public Page<PilotoEntity> getPilotosPorTemporada(int anyo, Pageable oPageable) {
         return oPilotoRepository.findPilotosPorTemporada(anyo, oPageable);
-    } */
-    public List<PilotoEntity> getPilotosPorTemporada(int anyo) {
-        return oPilotoRepository.findPilotosPorTemporada(anyo);
     }
     
     public Page<PilotoEntity> getPage(Pageable oPageable) {

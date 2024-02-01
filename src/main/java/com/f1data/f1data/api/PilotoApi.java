@@ -87,13 +87,9 @@ public class PilotoApi {
         return ResponseEntity.ok(oPilotoService.getPilotosPodio(oPageable));
     }
 
-    /* @GetMapping("/temporada/{anyo}")
+    @GetMapping("/temporada/{anyo}")
     public ResponseEntity<Page<PilotoEntity>> getPilotosPorTemporada(@PathVariable("anyo") int anyo, Pageable oPageable) {
         return ResponseEntity.ok(oPilotoService.getPilotosPorTemporada(anyo, oPageable));
-    } */
-    @GetMapping("/temporada/{anyo}")
-    public ResponseEntity<List<PilotoEntity>> getPilotosPorTemporada(@PathVariable("anyo") int anyo) {
-        return ResponseEntity.ok(oPilotoService.getPilotosPorTemporada(anyo));
     }
 
     @GetMapping("/edad/{edad}")

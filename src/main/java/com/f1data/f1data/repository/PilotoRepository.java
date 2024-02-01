@@ -19,19 +19,16 @@ public interface PilotoRepository extends JpaRepository<PilotoEntity, Long> {
 
     Page<PilotoEntity> findByNacionalidadContaining(String nacionalidad, Pageable oPageable);
 
-    @Query(value = "SELECT DISTINCT p.* FROM piloto p JOIN resultadoCarrera rca ON p.id = rca.piloto_id WHERE rca.posicion = 1", nativeQuery = true)
+    @Query(value = "SELECT DISTINCT p.* FROM piloto p JOIN resultado_carrera rca ON p.id = rca.piloto_id WHERE rca.posicion = 1", nativeQuery = true)
     Page<PilotoEntity> findPilotosGanadores(Pageable oPageable);
 
-    @Query(value = "SELECT DISTINCT p.* FROM piloto p JOIN resultadoCarrera rca ON p.id = rca.piloto_id WHERE rca.posicion IN (1, 2, 3)", nativeQuery = true)
+    @Query(value = "SELECT DISTINCT p.* FROM piloto p JOIN resultado_carrera rca ON p.id = rca.piloto_id WHERE rca.posicion IN (1, 2, 3)", nativeQuery = true)
     Page<PilotoEntity> findPilotosPodio(Pageable oPageable);
 
-    /* @Query(value = "SELECT DISTINCT p.id FROM piloto p JOIN resultadoCarrera rca ON p.id = rca.piloto_id JOIN carrera c ON rca.carrera_id = c.id WHERE YEAR(c.fecha_inic) = :anyo", nativeQuery = true)
+    /* @Query(value = "SELECT DISTINCT p.id FROM piloto p JOIN resultado_carrera rca ON p.id = rca.piloto_id JOIN carrera c ON rca.carrera_id = c.id WHERE YEAR(c.fecha_inic) = :anyo", nativeQuery = true)
     Page<PilotoEntity> findPilotosPorTemporada(@Param("anyo") int anyo, Pageable pageable); */
-    @Query(value = "SELECT DISTINCT p.* FROM piloto p " +
-                   "JOIN resultadoCarrera rc ON p.id = rc.piloto_id " +
-                   "JOIN carrera c ON rc.carrera_id = c.id " +
-                   "WHERE YEAR(c.fecha_inic) = :anyo", nativeQuery = true)
-    List<PilotoEntity> findPilotosPorTemporada(@Param("anyo") int anyo);
+    @Query(value = "SELECT * FROM piloto p WHERE p.id IN (SELECT piloto_id FROM resultado_carrera WHERE carrera_id IN (SELECT id FROM carrera WHERE YEAR(fecha_inic) = :anyo))", nativeQuery = true)
+    Page<PilotoEntity> findPilotosPorTemporada(@Param("anyo") int anyo, Pageable oPageable);
 
     @Query(value = "SELECT * FROM piloto p WHERE TIMESTAMPDIFF(YEAR, p.fecha_nac, CURDATE()) = :edad", nativeQuery = true)
     Page<PilotoEntity> findPilotosPorEdad(@Param("edad") int edad, Pageable oPageable);
