@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.f1data.f1data.entity.PilotoEntity;
@@ -39,18 +40,22 @@ public class PilotoApi {
     public ResponseEntity<PilotoEntity> getByNombre(@PathVariable("nombre") String nombre) {
         return ResponseEntity.ok(oPilotoService.getByNombre(nombre));
     }
-    /* @GetMapping("/nombre/{nombre}")
-    public ResponseEntity<PilotoEntity> getByNombre(@PathVariable("nombre") String nombre) {
-        try {
-            String nombreDecodificado = URLDecoder.decode(nombre, "UTF-8");
-            return ResponseEntity.ok(oPilotoService.getByNombre(nombreDecodificado));
-        } catch (UnsupportedEncodingException e) {
-            // Manejar la excepción de codificación no compatible
-            // Puedes imprimir un mensaje de error o realizar alguna otra acción apropiada
-            e.printStackTrace();
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-        }
-    } */
+    /*
+     * @GetMapping("/nombre/{nombre}")
+     * public ResponseEntity<PilotoEntity> getByNombre(@PathVariable("nombre")
+     * String nombre) {
+     * try {
+     * String nombreDecodificado = URLDecoder.decode(nombre, "UTF-8");
+     * return ResponseEntity.ok(oPilotoService.getByNombre(nombreDecodificado));
+     * } catch (UnsupportedEncodingException e) {
+     * // Manejar la excepción de codificación no compatible
+     * // Puedes imprimir un mensaje de error o realizar alguna otra acción
+     * apropiada
+     * e.printStackTrace();
+     * return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+     * }
+     * }
+     */
 
     @PostMapping("")
     public ResponseEntity<Long> create(@RequestBody PilotoEntity oPilotoEntity) {
@@ -68,27 +73,44 @@ public class PilotoApi {
     }
 
     @GetMapping("")
-    public ResponseEntity<Page<PilotoEntity>> getPage(Pageable oPageable) {
-        return ResponseEntity.ok(oPilotoService.getPage(oPageable));
+    public ResponseEntity<Page<PilotoEntity>> getPage(@RequestParam(required = false) Integer temporada,
+            Pageable oPageable) {
+        if (temporada != null) {
+            return ResponseEntity.ok(oPilotoService.getPilotosPorTemporada(temporada, oPageable));
+        } else {
+            return ResponseEntity.ok(oPilotoService.getPage(oPageable));
+        }
     }
 
     @GetMapping("/nacionalidad/{nacionalidad}")
-    public ResponseEntity<Page<PilotoEntity>> getByNacionalidad(@PathVariable("nacionalidad") String nacionalidad, Pageable oPageable) {
+    public ResponseEntity<Page<PilotoEntity>> getByNacionalidad(@PathVariable("nacionalidad") String nacionalidad,
+            Pageable oPageable) {
         return ResponseEntity.ok(oPilotoService.getByNacionalidad(nacionalidad, oPageable));
     }
 
     @GetMapping("/ganadores")
-    public ResponseEntity<Page<PilotoEntity>> getPilotosGanadores(Pageable oPageable) {
-        return ResponseEntity.ok(oPilotoService.getPilotosGanadores(oPageable));
+    public ResponseEntity<Page<PilotoEntity>> getPilotosGanadores(@RequestParam(required = false) Integer temporada,
+            Pageable oPageable) {
+        if (temporada != null) {
+            return ResponseEntity.ok(oPilotoService.getPilotosGanadoresPorTemporada(temporada, oPageable));
+        } else {
+            return ResponseEntity.ok(oPilotoService.getPilotosGanadores(oPageable));
+        }
     }
 
     @GetMapping("/podio")
-    public ResponseEntity<Page<PilotoEntity>> getPilotosPodio(Pageable oPageable) {
-        return ResponseEntity.ok(oPilotoService.getPilotosPodio(oPageable));
+    public ResponseEntity<Page<PilotoEntity>> getPilotosPodio(@RequestParam(required = false) Integer temporada,
+            Pageable oPageable) {
+        if (temporada != null) {
+            return ResponseEntity.ok(oPilotoService.getPilotosPodioPorTemporada(temporada, oPageable));
+        } else {
+            return ResponseEntity.ok(oPilotoService.getPilotosPodio(oPageable));
+        }
     }
 
     @GetMapping("/temporada/{anyo}")
-    public ResponseEntity<Page<PilotoEntity>> getPilotosPorTemporada(@PathVariable("anyo") int anyo, Pageable oPageable) {
+    public ResponseEntity<Page<PilotoEntity>> getPilotosPorTemporada(@PathVariable("anyo") int anyo,
+            Pageable oPageable) {
         return ResponseEntity.ok(oPilotoService.getPilotosPorTemporada(anyo, oPageable));
     }
 
