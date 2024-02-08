@@ -7,15 +7,20 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import com.f1data.f1data.dto.PilotoDetalles;
 import com.f1data.f1data.entity.PilotoEntity;
 import com.f1data.f1data.exception.ResourceNotFoundException;
 import com.f1data.f1data.repository.PilotoRepository;
+import com.f1data.f1data.repository.ResultadoCarreraRepository;
 
 @Service
 public class PilotoService {
 
     @Autowired
     private PilotoRepository oPilotoRepository;
+
+    @Autowired
+    private ResultadoCarreraRepository oResultadoCarreraRepository;
 
     public PilotoEntity get(Long id) {
         return oPilotoRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Piloto no encontrado"));
@@ -75,5 +80,33 @@ public class PilotoService {
         PilotoEntity oPilotoEntityBD = get(id);
         oPilotoRepository.delete(oPilotoEntityBD);
         return id;
+    }
+
+    // Consultas para un piloto específico
+    public PilotoDetalles obtenerDetallesPiloto(Long idPiloto) {
+        PilotoEntity piloto = oPilotoRepository.findById(idPiloto)
+                .orElseThrow(() -> new ResourceNotFoundException("Piloto no encontrado"));
+
+        int victorias = oResultadoCarreraRepository.cuentaVictoriasPorPiloto(idPiloto);
+        int podios = oResultadoCarreraRepository.cuentaPodiosPorPiloto(idPiloto);
+        int carrerasDisputadas = oResultadoCarreraRepository.cuentaCarrerasDisputadasPorPiloto(idPiloto);
+        int vueltasRapidas = oResultadoCarreraRepository.cuentaVueltasRapidasPorPiloto(idPiloto);
+        int abandonos = oResultadoCarreraRepository.cuentaAbandonosPorPiloto(idPiloto);
+        int mejorPosicionCarrera = oResultadoCarreraRepository.mejorPosicionCarreraPorPiloto(idPiloto);
+        int vecesMejorPosicionCarrera = oResultadoCarreraRepository.cuentaVecesMejorPosicionCarrera(idPiloto);
+        int puntos = oResultadoCarreraRepository.sumaPuntosPorPiloto(idPiloto);
+
+        PilotoDetalles detalles = new PilotoDetalles();
+        detalles.setPiloto(piloto);
+        detalles.setVictorias(victorias);
+        detalles.setPodios(podios);
+        detalles.setCarrerasDisputadas(carrerasDisputadas);
+        detalles.setVueltasRapidas(vueltasRapidas);
+        detalles.setAbandonos(abandonos);
+        detalles.setMejorPosicionCarrera(mejorPosicionCarrera);
+        detalles.setVecesMejorPosicionCarrera(vecesMejorPosicionCarrera);
+        detalles.setPuntosConseguidos(puntos);
+
+        return detalles;
     }
 }

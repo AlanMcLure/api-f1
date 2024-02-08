@@ -10,7 +10,10 @@ CREATE TABLE piloto (
     nombre VARCHAR(100) NOT NULL,
     fecha_nac DATE,
     nacionalidad VARCHAR(50),
-    img VARCHAR(255)
+    img_flag VARCHAR(255),
+    lugar_nac VARCHAR(50),
+    img VARCHAR(255),
+    casco VARCHAR(255)
     -- Otros campos relevantes
 );
 

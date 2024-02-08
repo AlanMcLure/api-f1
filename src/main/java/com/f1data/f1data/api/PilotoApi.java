@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.f1data.f1data.dto.PilotoDetalles;
 import com.f1data.f1data.entity.PilotoEntity;
 import com.f1data.f1data.service.PilotoService;
 
@@ -34,6 +35,12 @@ public class PilotoApi {
     @GetMapping("/{id}")
     public ResponseEntity<PilotoEntity> get(@PathVariable("id") Long id) {
         return ResponseEntity.ok(oPilotoService.get(id));
+    }
+
+    @GetMapping("/{id}/detalles")
+    public ResponseEntity<PilotoDetalles> obtenerDetallesPiloto(@PathVariable Long id) {
+        PilotoDetalles detalles = oPilotoService.obtenerDetallesPiloto(id);
+        return new ResponseEntity<>(detalles, HttpStatus.OK);
     }
 
     @GetMapping("/nombre/{nombre}")
