@@ -25,7 +25,36 @@ public class PilotoEntity {
 
     private String img;
 
+    private String img_flag;
+
+    private String lugar_nac;
+
+    private String casco;
+
     public PilotoEntity() {
+    }
+
+    public PilotoEntity(Long id, String nombre, String fecha_nac, String nacionalidad, String img, String img_flag,
+            String lugar_nac, String casco) {
+        this.id = id;
+        this.nombre = nombre;
+        this.fecha_nac = fecha_nac;
+        this.nacionalidad = nacionalidad;
+        this.img = img;
+        this.img_flag = img_flag;
+        this.lugar_nac = lugar_nac;
+        this.casco = casco;
+    }
+
+    public PilotoEntity(Long id, String nombre, String fecha_nac, String nacionalidad, String img, String img_flag,
+            String lugar_nac) {
+        this.id = id;
+        this.nombre = nombre;
+        this.fecha_nac = fecha_nac;
+        this.nacionalidad = nacionalidad;
+        this.img = img;
+        this.img_flag = img_flag;
+        this.lugar_nac = lugar_nac;
     }
 
     public PilotoEntity(Long id, String nombre, String fecha_nac, String nacionalidad, String img) {
@@ -94,5 +123,29 @@ public class PilotoEntity {
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    public String getImg_flag() {
+        return img_flag;
+    }
+
+    public void setImg_flag(String img_flag) {
+        this.img_flag = img_flag;
+    }
+
+    public String getLugar_nac() {
+        return lugar_nac;
+    }
+
+    public void setLugar_nac(String lugar_nac) {
+        this.lugar_nac = lugar_nac;
+    }
+
+    public String getCasco() {
+        return casco;
+    }
+
+    public void setCasco(String casco) {
+        this.casco = casco;
     }
 }
