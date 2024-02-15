@@ -87,25 +87,25 @@ public class PilotoService {
         PilotoEntity piloto = oPilotoRepository.findById(idPiloto)
                 .orElseThrow(() -> new ResourceNotFoundException("Piloto no encontrado"));
 
-        int victorias = oResultadoCarreraRepository.cuentaVictoriasPorPiloto(idPiloto);
-        int podios = oResultadoCarreraRepository.cuentaPodiosPorPiloto(idPiloto);
-        int carrerasDisputadas = oResultadoCarreraRepository.cuentaCarrerasDisputadasPorPiloto(idPiloto);
-        int vueltasRapidas = oResultadoCarreraRepository.cuentaVueltasRapidasPorPiloto(idPiloto);
-        int abandonos = oResultadoCarreraRepository.cuentaAbandonosPorPiloto(idPiloto);
-        int mejorPosicionCarrera = oResultadoCarreraRepository.mejorPosicionCarreraPorPiloto(idPiloto);
-        int vecesMejorPosicionCarrera = oResultadoCarreraRepository.cuentaVecesMejorPosicionCarrera(idPiloto);
-        int puntos = oResultadoCarreraRepository.sumaPuntosPorPiloto(idPiloto);
+        Integer victorias = oResultadoCarreraRepository.cuentaVictoriasPorPiloto(idPiloto);
+        Integer podios = oResultadoCarreraRepository.cuentaPodiosPorPiloto(idPiloto);
+        Integer carrerasDisputadas = oResultadoCarreraRepository.cuentaCarrerasDisputadasPorPiloto(idPiloto);
+        Integer vueltasRapidas = oResultadoCarreraRepository.cuentaVueltasRapidasPorPiloto(idPiloto);
+        Integer abandonos = oResultadoCarreraRepository.cuentaAbandonosPorPiloto(idPiloto);
+        Integer mejorPosicionCarrera = oResultadoCarreraRepository.mejorPosicionCarreraPorPiloto(idPiloto);
+        Integer vecesMejorPosicionCarrera = oResultadoCarreraRepository.cuentaVecesMejorPosicionCarrera(idPiloto);
+        Integer puntos = oResultadoCarreraRepository.sumaPuntosPorPiloto(idPiloto);
 
         PilotoDetalles detalles = new PilotoDetalles();
         detalles.setPiloto(piloto);
-        detalles.setVictorias(victorias);
-        detalles.setPodios(podios);
-        detalles.setCarrerasDisputadas(carrerasDisputadas);
-        detalles.setVueltasRapidas(vueltasRapidas);
-        detalles.setAbandonos(abandonos);
-        detalles.setMejorPosicionCarrera(mejorPosicionCarrera);
-        detalles.setVecesMejorPosicionCarrera(vecesMejorPosicionCarrera);
-        detalles.setPuntosConseguidos(puntos);
+        detalles.setVictorias(victorias != null ? victorias : 0);
+        detalles.setPodios(podios != null ? podios : 0);
+        detalles.setCarrerasDisputadas(carrerasDisputadas != null ? carrerasDisputadas : 0);
+        detalles.setVueltasRapidas(vueltasRapidas != null ? vueltasRapidas : 0);
+        detalles.setAbandonos(abandonos != null ? abandonos : 0);
+        detalles.setMejorPosicionCarrera(mejorPosicionCarrera != null ? mejorPosicionCarrera : 0);
+        detalles.setVecesMejorPosicionCarrera(vecesMejorPosicionCarrera != null ? vecesMejorPosicionCarrera : 0);
+        detalles.setPuntosConseguidos(puntos != null ? puntos : 0);
 
         return detalles;
     }

@@ -31,25 +31,25 @@ public interface ResultadoCarreraRepository extends JpaRepository<ResultadoCarre
 
     // Consultas para un piloto específico
     @Query(value = "SELECT COUNT(*) FROM resultado_carrera WHERE piloto_id = :idPiloto AND posicion = 1", nativeQuery = true)
-    int cuentaVictoriasPorPiloto(Long idPiloto);
+    Integer cuentaVictoriasPorPiloto(Long idPiloto);
 
     @Query(value = "SELECT COUNT(*) FROM resultado_carrera WHERE piloto_id = :idPiloto AND posicion <= 3", nativeQuery = true)
-    int cuentaPodiosPorPiloto(Long idPiloto);
+    Integer cuentaPodiosPorPiloto(Long idPiloto);
 
     @Query(value = "SELECT COUNT(*) FROM resultado_carrera WHERE piloto_id = :idPiloto", nativeQuery = true)
-    int cuentaCarrerasDisputadasPorPiloto(Long idPiloto);
+    Integer cuentaCarrerasDisputadasPorPiloto(Long idPiloto);
 
     @Query(value = "SELECT COUNT(*) FROM resultado_carrera WHERE piloto_id = :idPiloto AND vuelta_rapida = 1", nativeQuery = true)
-    int cuentaVueltasRapidasPorPiloto(Long idPiloto);
+    Integer cuentaVueltasRapidasPorPiloto(Long idPiloto);
 
     @Query(value = "SELECT COUNT(*) FROM resultado_carrera WHERE piloto_id = :idPiloto AND dnf = 1", nativeQuery = true)
-    int cuentaAbandonosPorPiloto(Long idPiloto);
+    Integer cuentaAbandonosPorPiloto(Long idPiloto);
 
     @Query(value = "SELECT MIN(posicion) FROM resultado_carrera WHERE piloto_id = :idPiloto", nativeQuery = true)
-    int mejorPosicionCarreraPorPiloto(Long idPiloto);
+    Integer mejorPosicionCarreraPorPiloto(Long idPiloto);
 
     @Query(value = "SELECT COUNT(*) FROM resultado_carrera WHERE piloto_id = :idPiloto AND posicion = (SELECT MIN(posicion) FROM resultado_carrera WHERE piloto_id = :idPiloto)", nativeQuery = true)
-    int cuentaVecesMejorPosicionCarrera(Long idPiloto);
+    Integer cuentaVecesMejorPosicionCarrera(Long idPiloto);
 
     @Query(value = "SELECT SUM(CASE "
             + "WHEN posicion = 1 THEN 25 "
@@ -65,7 +65,7 @@ public interface ResultadoCarreraRepository extends JpaRepository<ResultadoCarre
             + "ELSE 0 END "
             + "+ CASE WHEN posicion <= 10 AND vuelta_rapida = 1 THEN 1 ELSE 0 END) "
             + "FROM resultado_carrera WHERE piloto_id = :idPiloto", nativeQuery = true)
-    int sumaPuntosPorPiloto(Long idPiloto);
+    Integer sumaPuntosPorPiloto(Long idPiloto);
 
     // Por hacer (crear resultadoClasificacionRepository)
 }
