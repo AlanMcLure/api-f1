@@ -19,7 +19,7 @@ import com.f1data.f1data.service.ClasificacionService;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/clasificaion")
+@RequestMapping("/clasificacion")
 public class ClasificacionApi {
   
   @Autowired

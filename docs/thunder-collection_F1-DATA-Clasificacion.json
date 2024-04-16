@@ -1,0 +1,79 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "F1-DATA-Clasificacion",
+    "dateExported": "2024-04-16T22:08:13.124Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "3ae19742-2bb5-4767-9f09-741a7b217115",
+            "colId": "ecc4c200-3d92-4a6c-b6cb-2f65464d0a13",
+            "containerId": "",
+            "name": "Get clasificacion",
+            "url": "http://localhost:8083/clasificacion/13",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-04-16T22:00:58.759Z",
+            "modified": "2024-04-16T22:07:57.072Z",
+            "headers": []
+        },
+        {
+            "_id": "6df38340-e57f-4779-a191-16d46c31917f",
+            "colId": "ecc4c200-3d92-4a6c-b6cb-2f65464d0a13",
+            "containerId": "",
+            "name": "Post clasificacion",
+            "url": "http://localhost:8083/clasificacion",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-04-16T22:00:58.760Z",
+            "modified": "2024-04-16T22:07:52.194Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"granPremio\": {\n    \"id\": 2,\n    \"circuito\": {\n      \"id\": 5\n      }\n  },\n  \"fecha_inic\": \"2021-09-18T16:00:00\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "0344b227-93fe-4347-ad1f-349badaa524e",
+            "colId": "ecc4c200-3d92-4a6c-b6cb-2f65464d0a13",
+            "containerId": "",
+            "name": "Put clasificacion",
+            "url": "http://localhost:8083/clasificacion",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-04-16T22:00:58.761Z",
+            "modified": "2024-04-16T22:04:41.620Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 10,\n  \"granPremio\": {\n    \"id\": 2,\n    \"circuito\": {\n      \"id\": 5\n      }\n  },\n  \"fechaInic\": \"2021-03-27T16:00:00\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "53ee6c05-66d9-4472-9474-8da7d8b0de1a",
+            "colId": "ecc4c200-3d92-4a6c-b6cb-2f65464d0a13",
+            "containerId": "",
+            "name": "Delete clasificacion",
+            "url": "http://localhost:8083/clasificacion/11",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-04-16T22:00:58.762Z",
+            "modified": "2024-04-16T22:02:48.938Z",
+            "headers": []
+        },
+        {
+            "_id": "eaad1b0d-6e01-4410-a037-51fb84594689",
+            "colId": "ecc4c200-3d92-4a6c-b6cb-2f65464d0a13",
+            "containerId": "",
+            "name": "Get Page clasificacion",
+            "url": "http://localhost:8083/clasificacion",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-04-16T22:00:58.763Z",
+            "modified": "2024-04-16T22:02:59.316Z",
+            "headers": []
+        }
+    ]
+}
