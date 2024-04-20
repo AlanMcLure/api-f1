@@ -107,7 +107,7 @@ CREATE TABLE resultado_carrera (
 );
 
 -- Tabla ResultadoClasificacion
-CREATE TABLE Resultado_clasificacion (
+CREATE TABLE resultado_clasificacion (
     id INT PRIMARY KEY AUTO_INCREMENT,
     vuelta_q1 DECIMAL(10,3),
     vuelta_q2 DECIMAL(10,3),
@@ -293,3 +293,51 @@ VALUES
     (FALSE, 51, 18, TRUE, 14, 1),
     (FALSE, 32, 19, TRUE, 8, 1),
     (FALSE, 0, 20, TRUE, 20, 1);
+
+-- Insertar datos ficticios en resultado_clasificacion para la clasificación del Gran Premio de Bahrein 2021
+INSERT INTO resultado_clasificacion (vuelta_q1, vuelta_q2, vuelta_q3, posicion, penalizacion, piloto_id, clasificacion_id)
+VALUES
+    (87.322, 85.889, 84.615, 1, FALSE, 1, 1),
+    (87.915, 86.278, 84.993, 2, FALSE, 2, 1),
+    (88.261, 86.485, 85.086, 3, FALSE, 5, 1),
+    (88.647, 86.889, 85.298, 4, FALSE, 9, 1),
+    (88.998, 87.054, 85.613, 5, FALSE, 13, 1),
+    (89.123, 87.432, 85.871, 6, FALSE, 3, 1),
+    (89.485, 87.819, 86.201, 7, FALSE, 7, 1),
+    (89.667, 87.925, 86.452, 8, FALSE, 6, 1),
+    (89.935, 88.302, 86.791, 9, FALSE, 15, 1),
+    (90.201, 88.549, 86.998, 10, FALSE, 16, 1),
+    (90.521, 88.763, 87.315, 11, FALSE, 12, 1),
+    (90.783, 88.982, 87.429, 12, FALSE, 17, 1),
+    (90.925, 89.144, 87.693, 13, FALSE, 10, 1),
+    (91.107, 89.485, 87.842, 14, FALSE, 18, 1),
+    (91.359, 89.721, 88.101, 15, FALSE, 4, 1),
+    (91.521, 89.913, 88.245, 16, FALSE, 19, 1),
+    (91.788, 90.332, 88.549, 17, TRUE, 11, 1),
+    (91.923, 90.574, 88.672, 18, TRUE, 14, 1),
+    (92.215, 91.002, 89.005, 19, TRUE, 8, 1),
+    (0, 0, 0, 20, TRUE, 20, 1);
+
+-- Insertar datos ficticios en resultado_clasificacion para la clasificación del Gran Premio de Turquía 2021
+INSERT INTO resultado_clasificacion (vuelta_q1, vuelta_q2, vuelta_q3, posicion, penalizacion, piloto_id, clasificacion_id)
+VALUES
+    (87.122, 85.789, 84.415, 1, FALSE, 1, 2),
+    (87.715, 86.178, 84.893, 2, FALSE, 2, 2),
+    (88.161, 86.435, 85.086, 3, FALSE, 5, 2),
+    (88.547, 86.779, 85.298, 4, FALSE, 9, 2),
+    (88.998, 87.054, 85.513, 5, FALSE, 13, 2),
+    (89.123, 87.432, 85.771, 6, FALSE, 3, 2),
+    (89.485, 87.819, 86.201, 7, FALSE, 7, 2),
+    (89.667, 87.925, 86.452, 8, FALSE, 6, 2),
+    (89.935, 88.302, 86.791, 9, FALSE, 15, 2),
+    (90.201, 88.549, 86.998, 10, FALSE, 16, 2),
+    (90.521, 88.763, 87.315, 11, FALSE, 12, 2),
+    (90.783, 88.982, 87.429, 12, FALSE, 17, 2),
+    (90.925, 89.144, 87.693, 13, FALSE, 10, 2),
+    (91.107, 89.485, 87.842, 14, FALSE, 18, 2),
+    (91.359, 89.721, 88.101, 15, FALSE, 4, 2),
+    (91.521, 89.913, 88.245, 16, FALSE, 19, 2),
+    (91.788, 90.332, 88.549, 17, TRUE, 11, 2),
+    (91.923, 90.574, 88.672, 18, TRUE, 14, 2),
+    (92.215, 91.002, 89.005, 19, TRUE, 8, 2),
+    (0, 0, 0, 20, TRUE, 20, 2);

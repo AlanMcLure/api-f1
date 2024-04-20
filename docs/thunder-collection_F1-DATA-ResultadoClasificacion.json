@@ -1,0 +1,189 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "F1-DATA-ResultadoClasificacion",
+    "collectionId": "f3dbb3d1-32e4-4ca2-b79e-f85482fa373d",
+    "dateExported": "2024-04-20T18:26:01.539Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "f984cef7-bcfe-499c-9e6d-11270fca5c5a",
+            "colId": "f3dbb3d1-32e4-4ca2-b79e-f85482fa373d",
+            "containerId": "",
+            "name": "Get resultadoclasificacion",
+            "url": "http://localhost:8083/resultadoclasificacion/25",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-04-20T18:06:15.301Z",
+            "modified": "2024-04-20T18:15:24.889Z",
+            "headers": []
+        },
+        {
+            "_id": "2a930d96-3f5e-4344-9864-4966146dc4c1",
+            "colId": "f3dbb3d1-32e4-4ca2-b79e-f85482fa373d",
+            "containerId": "",
+            "name": "Get resultadoclasificacion by clasificacion y piloto",
+            "url": "http://localhost:8083/resultadoclasificacion/clasificacion/2/piloto/2",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-04-20T18:06:15.302Z",
+            "modified": "2024-04-20T18:16:04.201Z",
+            "headers": []
+        },
+        {
+            "_id": "30ef231b-c543-4096-8d74-c68f95cc2d32",
+            "colId": "f3dbb3d1-32e4-4ca2-b79e-f85482fa373d",
+            "containerId": "",
+            "name": "Get resultadoclasificacion by clasificacion y posicion",
+            "url": "http://localhost:8083/resultadoclasificacion/clasificacion/1/posicion/3",
+            "method": "GET",
+            "sortNum": 17500,
+            "created": "2024-04-20T18:06:15.303Z",
+            "modified": "2024-04-20T18:16:46.538Z",
+            "headers": []
+        },
+        {
+            "_id": "efba52f6-c204-4863-85f0-7ed41fde99d1",
+            "colId": "f3dbb3d1-32e4-4ca2-b79e-f85482fa373d",
+            "containerId": "",
+            "name": "Post resultadocarrera",
+            "url": "http://localhost:8083/resultadoclasificacion",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-04-20T18:06:15.304Z",
+            "modified": "2024-04-20T18:24:13.979Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"vuelta_q1\": 88.998,\n  \"vuelta_q2\": 87.054,\n  \"vuelta_q3\": 85.513,\n  \"posicion\": 5,\n  \"penalizacion\": 0,\n  \"piloto\": {\n    \"id\": 2\n  },\n  \"clasificacion\": {\n    \"id\": 2\n  }\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "2f0479cf-4931-4df2-89aa-6341224f9834",
+            "colId": "f3dbb3d1-32e4-4ca2-b79e-f85482fa373d",
+            "containerId": "",
+            "name": "Put resultadocarrera",
+            "url": "http://localhost:8083/resultadoclasificacion",
+            "method": "PUT",
+            "sortNum": 25000,
+            "created": "2024-04-20T18:06:15.305Z",
+            "modified": "2024-04-20T18:25:39.041Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 41,\n  \"vuelta_q1\": 88.998,\n  \"vuelta_q2\": 87.054,\n  \"vuelta_q3\": 85.513,\n  \"posicion\": 2,\n  \"penalizacion\": 0,\n  \"piloto\": {\n    \"id\": 2\n  },\n  \"clasificacion\": {\n    \"id\": 2\n  }\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "99a0c3bc-860f-40e6-8817-d478b345e3ff",
+            "colId": "f3dbb3d1-32e4-4ca2-b79e-f85482fa373d",
+            "containerId": "",
+            "name": "Delete resultadoclasificacion",
+            "url": "http://localhost:8083/resultadoclasificacion/22",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2024-04-20T18:06:15.306Z",
+            "modified": "2024-04-20T18:19:29.577Z",
+            "headers": []
+        },
+        {
+            "_id": "6256e8e6-42a2-40c4-bed8-e477b0a81472",
+            "colId": "f3dbb3d1-32e4-4ca2-b79e-f85482fa373d",
+            "containerId": "",
+            "name": "Get Page resultadoclasificacion",
+            "url": "http://localhost:8083/resultadoclasificacion?page=0&size=5",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-04-20T18:06:15.307Z",
+            "modified": "2024-04-20T18:20:13.975Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "0",
+                    "isPath": false
+                },
+                {
+                    "name": "size",
+                    "value": "5",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "51fa7050-2f58-4a01-a265-9a8d8a1da948",
+            "colId": "f3dbb3d1-32e4-4ca2-b79e-f85482fa373d",
+            "containerId": "",
+            "name": "Get Page resultadoclasificacion by clasificacion",
+            "url": "http://localhost:8083/resultadoclasificacion/clasificacion/2?page=0&size=5",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-04-20T18:06:15.308Z",
+            "modified": "2024-04-20T18:20:45.918Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "0",
+                    "isPath": false
+                },
+                {
+                    "name": "size",
+                    "value": "5",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "b401055f-e1da-4762-82d9-2861a37e2db8",
+            "colId": "f3dbb3d1-32e4-4ca2-b79e-f85482fa373d",
+            "containerId": "",
+            "name": "Get Page resultadoclasificacion by piloto",
+            "url": "http://localhost:8083/resultadoclasificacion/piloto/3?page=0&size=5",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-04-20T18:06:15.309Z",
+            "modified": "2024-04-20T18:21:41.810Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "0",
+                    "isPath": false
+                },
+                {
+                    "name": "size",
+                    "value": "5",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "2ceb9a04-edaf-4fb9-9c37-b7b67748fcfe",
+            "colId": "f3dbb3d1-32e4-4ca2-b79e-f85482fa373d",
+            "containerId": "",
+            "name": "Get Page resultadoclasificacion by anyo",
+            "url": "http://localhost:8083/resultadoclasificacion/anyo/2021",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-04-20T18:06:15.310Z",
+            "modified": "2024-04-20T18:22:05.678Z",
+            "headers": []
+        },
+        {
+            "_id": "853a2a07-772d-46a0-8db8-a7f1ee96a157",
+            "colId": "f3dbb3d1-32e4-4ca2-b79e-f85482fa373d",
+            "containerId": "",
+            "name": "Get Page resultadoclasificacion by anyo y piloto",
+            "url": "http://localhost:8083/resultadoclasificacion/anyo/2021/piloto/2",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-04-20T18:06:15.311Z",
+            "modified": "2024-04-20T18:25:05.390Z",
+            "headers": []
+        }
+    ],
+    "ref": "uo2hyQcchRVuCb34piKKdW2to5kf1VLabhQsuET6tjz0nTcAFQ0TOk5hI7Ac1G4sNztDA2YfBRXJ4-vWos31gw"
+}

@@ -14,7 +14,7 @@ public interface ResultadoClasificacionRepository extends JpaRepository<Resultad
     @Query(value = "SELECT * FROM resultado_clasificacion rc WHERE rc.clasificacion_id = :idClasificacion AND rc.piloto_id = :idPiloto", nativeQuery = true)
     ResultadoClasificacionEntity findByClasificacionAndPiloto(Long idClasificacion, Long idPiloto);
 
-    @Query(value = "SELECT * FROM resultado_clasificaion rc WHERE rc.clasificacion_id = :idClasificacion AND rc.posicion = :posicion", nativeQuery = true)
+    @Query(value = "SELECT * FROM resultado_clasificacion rc WHERE rc.clasificacion_id = :idClasificacion AND rc.posicion = :posicion", nativeQuery = true)
     ResultadoClasificacionEntity findByClasificacionAndPosicion(Long idClasificacion, int posicion);
 
     @Query(value = "SELECT * FROM resultado_clasificacion rc WHERE rc.clasificacion_id = :idClasificacion", nativeQuery = true)
