@@ -31,12 +31,12 @@ public class PilotoService {
                 .orElseThrow(() -> new ResourceNotFoundException("Piloto no encontrado"));
     }
 
-    public Page<PilotoEntity> getPilotosPorTemporada(int anyo, Pageable oPageable) {
-        return oPilotoRepository.findPilotosPorTemporada(anyo, oPageable);
-    }
-
     public Page<PilotoEntity> getPage(Pageable oPageable) {
         return oPilotoRepository.findAll(oPageable);
+    }
+
+    public Page<PilotoEntity> getPilotosPorTemporada(int anyo, Pageable oPageable) {
+        return oPilotoRepository.findPilotosPorTemporada(anyo, oPageable);
     }
 
     public Page<PilotoEntity> getByNacionalidad(String nacionalidad, Pageable oPageable) {
