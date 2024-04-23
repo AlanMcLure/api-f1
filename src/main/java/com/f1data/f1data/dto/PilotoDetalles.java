@@ -1,10 +1,11 @@
 package com.f1data.f1data.dto;
 
+import com.f1data.f1data.entity.EquipoEntity;
 import com.f1data.f1data.entity.PilotoEntity;
 
 public class PilotoDetalles {
     private PilotoEntity piloto;
-    // private EquipoEntity equipoActual;
+    private EquipoEntity equipoActual;
     private int puntosConseguidos;
     private int victorias;
     private int podios;
