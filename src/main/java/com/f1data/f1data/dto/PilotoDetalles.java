@@ -1,7 +1,11 @@
 package com.f1data.f1data.dto;
 
+import java.util.Date;
+import java.util.List;
+
 import com.f1data.f1data.entity.EquipoEntity;
 import com.f1data.f1data.entity.PilotoEntity;
+import com.f1data.f1data.entity.PilotoEquipoEntity;
 
 public class PilotoDetalles {
     private PilotoEntity piloto;
@@ -133,4 +137,20 @@ public class PilotoDetalles {
     public void setVecesMejorPosicionClasificacion(int vecesMejorPosicionClasificacion) {
         this.vecesMejorPosicionClasificacion = vecesMejorPosicionClasificacion;
     }
+
+    private EquipoEntity obtenerEquipoActual(PilotoEntity piloto, PilotoEquipoEntity[] historialEquipos,
+            Date fechaActual) {
+        // Iterar por el historial de equipos para encontrar el equipo actual en función
+        // de la fecha actual
+        for (PilotoEquipoEntity pilotoEquipo : historialEquipos) {
+            // Comprobar si la fecha actual está dentro del rango de fechas del historial de
+            // equipos
+            if (fechaActual.after(pilotoEquipo.getFecha_inic()) &&
+                    (pilotoEquipo.getFecha_fin() == null || fechaActual.before(pilotoEquipo.getFecha_fin()))) {
+                return pilotoEquipo.getEquipo();
+            }
+        }
+        return null; // Devolver null si no se encuentra ningún equipo para la fecha actual
+    }
+
 }
