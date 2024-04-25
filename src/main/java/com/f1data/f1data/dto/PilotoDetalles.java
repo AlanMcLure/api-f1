@@ -1,5 +1,7 @@
 package com.f1data.f1data.dto;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -9,7 +11,7 @@ import com.f1data.f1data.entity.PilotoEquipoEntity;
 
 public class PilotoDetalles {
     private PilotoEntity piloto;
-    private EquipoEntity equipoActual;
+    private List<EquipoEntity> historialEquipos;
     private int puntosConseguidos;
     private int victorias;
     private int podios;
@@ -25,10 +27,12 @@ public class PilotoDetalles {
     public PilotoDetalles() {
     }
 
-    public PilotoDetalles(PilotoEntity piloto, int puntosConseguidos, int victorias, int podios, int carrerasDisputadas,
+    public PilotoDetalles(PilotoEntity piloto, PilotoEquipoEntity[] historialEquipos, String fechaActual,
+            int puntosConseguidos, int victorias, int podios, int carrerasDisputadas,
             int poles, int vueltasRapidas, int abandono, int mejorPosicionCarrera, int vecesMejorPosicionCarrera,
             int mejorPosicionClasificacion, int vecesMejorPosicionClasificacion) {
         this.piloto = piloto;
+        this.equipoActual = obtenerEquipoActual(piloto, historialEquipos, fechaActual);
         this.puntosConseguidos = puntosConseguidos;
         this.victorias = victorias;
         this.podios = podios;
@@ -138,19 +142,44 @@ public class PilotoDetalles {
         this.vecesMejorPosicionClasificacion = vecesMejorPosicionClasificacion;
     }
 
+    public List<EquipoEntity> getHistorialEquipos() {
+        return historialEquipos;
+    }
+
+    public void setHistorialEquipos(List<EquipoEntity> historialEquipos) {
+        this.historialEquipos = historialEquipos;
+    }
+
     private EquipoEntity obtenerEquipoActual(PilotoEntity piloto, PilotoEquipoEntity[] historialEquipos,
-            Date fechaActual) {
+            String fechaActual) {
+        // Convertir la cadena de fecha a un objeto Date
+        Date fechaActualDate = parseFecha(fechaActual);
+
         // Iterar por el historial de equipos para encontrar el equipo actual en función
         // de la fecha actual
         for (PilotoEquipoEntity pilotoEquipo : historialEquipos) {
+            // Convertir las cadenas de fecha del historial de equipos a objetos Date
+            Date fechaInicDate = parseFecha(pilotoEquipo.getFecha_inic());
+            Date fechaFinDate = parseFecha(pilotoEquipo.getFecha_fin());
+
             // Comprobar si la fecha actual está dentro del rango de fechas del historial de
             // equipos
-            if (fechaActual.after(pilotoEquipo.getFecha_inic()) &&
-                    (pilotoEquipo.getFecha_fin() == null || fechaActual.before(pilotoEquipo.getFecha_fin()))) {
+            if (fechaActualDate.after(fechaInicDate) &&
+                    (fechaFinDate == null || fechaActualDate.before(fechaFinDate))) {
                 return pilotoEquipo.getEquipo();
             }
         }
         return null; // Devolver null si no se encuentra ningún equipo para la fecha actual
+    }
+
+    private Date parseFecha(String fecha) {
+        try {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            return dateFormat.parse(fecha);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
 }
