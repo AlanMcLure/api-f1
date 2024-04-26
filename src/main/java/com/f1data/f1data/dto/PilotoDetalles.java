@@ -11,7 +11,7 @@ import com.f1data.f1data.entity.PilotoEquipoEntity;
 
 public class PilotoDetalles {
     private PilotoEntity piloto;
-    private List<EquipoEntity> historialEquipos;
+    private List<PilotoEquipoEntity> historialEquipos;
     private int puntosConseguidos;
     private int victorias;
     private int podios;
@@ -27,12 +27,12 @@ public class PilotoDetalles {
     public PilotoDetalles() {
     }
 
-    public PilotoDetalles(PilotoEntity piloto, PilotoEquipoEntity[] historialEquipos, String fechaActual,
+    public PilotoDetalles(PilotoEntity piloto, List<PilotoEquipoEntity> historialEquipos, String fechaActual,
             int puntosConseguidos, int victorias, int podios, int carrerasDisputadas,
             int poles, int vueltasRapidas, int abandono, int mejorPosicionCarrera, int vecesMejorPosicionCarrera,
             int mejorPosicionClasificacion, int vecesMejorPosicionClasificacion) {
         this.piloto = piloto;
-        this.equipoActual = obtenerEquipoActual(piloto, historialEquipos, fechaActual);
+        this.historialEquipos = historialEquipos;
         this.puntosConseguidos = puntosConseguidos;
         this.victorias = victorias;
         this.podios = podios;
@@ -142,11 +142,11 @@ public class PilotoDetalles {
         this.vecesMejorPosicionClasificacion = vecesMejorPosicionClasificacion;
     }
 
-    public List<EquipoEntity> getHistorialEquipos() {
+    public List<PilotoEquipoEntity> getHistorialEquipos() {
         return historialEquipos;
     }
 
-    public void setHistorialEquipos(List<EquipoEntity> historialEquipos) {
+    public void setHistorialEquipos(List<PilotoEquipoEntity> historialEquipos) {
         this.historialEquipos = historialEquipos;
     }
 

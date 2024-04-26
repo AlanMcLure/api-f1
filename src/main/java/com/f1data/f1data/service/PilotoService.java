@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.f1data.f1data.dto.PilotoDetalles;
 import com.f1data.f1data.entity.PilotoEntity;
+import com.f1data.f1data.entity.PilotoEquipoEntity;
 import com.f1data.f1data.exception.ResourceNotFoundException;
 import com.f1data.f1data.repository.PilotoRepository;
 import com.f1data.f1data.repository.ResultadoCarreraRepository;
@@ -18,6 +19,9 @@ public class PilotoService {
 
     @Autowired
     private PilotoRepository oPilotoRepository;
+
+    @Autowired
+    private PilotoEquipoService oPilotoEquipoService;
 
     @Autowired
     private ResultadoCarreraRepository oResultadoCarreraRepository;
@@ -95,6 +99,7 @@ public class PilotoService {
         Integer mejorPosicionCarrera = oResultadoCarreraRepository.mejorPosicionCarreraPorPiloto(idPiloto);
         Integer vecesMejorPosicionCarrera = oResultadoCarreraRepository.cuentaVecesMejorPosicionCarrera(idPiloto);
         Integer puntos = oResultadoCarreraRepository.sumaPuntosPorPiloto(idPiloto);
+        List<PilotoEquipoEntity> historialEquipos = oPilotoEquipoService.obtenerHistorialEquipos(piloto);
 
         PilotoDetalles detalles = new PilotoDetalles();
         detalles.setPiloto(piloto);
@@ -106,6 +111,7 @@ public class PilotoService {
         detalles.setMejorPosicionCarrera(mejorPosicionCarrera != null ? mejorPosicionCarrera : 0);
         detalles.setVecesMejorPosicionCarrera(vecesMejorPosicionCarrera != null ? vecesMejorPosicionCarrera : 0);
         detalles.setPuntosConseguidos(puntos != null ? puntos : 0);
+        detalles.setHistorialEquipos(historialEquipos);
 
         return detalles;
     }
