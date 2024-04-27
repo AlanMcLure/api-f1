@@ -14,7 +14,7 @@ public interface EquipoRepository extends JpaRepository<EquipoEntity, Long> {
 
     Optional<EquipoEntity> findByNombre(String nombre);
 
-    Page<EquipoEntity> findByPais(String pais, Pageable oPageable);
+    Page<EquipoEntity> findByNacionalidad(String nacionalidad, Pageable oPageable);
 
     // Page<EquipoEntity> findByMotor(String motor, Pageable oPageable);
 

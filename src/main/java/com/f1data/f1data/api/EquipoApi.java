@@ -69,10 +69,10 @@ public class EquipoApi {
         }
     }
 
-    @GetMapping("/pais/{pais}")
-    public ResponseEntity<Page<EquipoEntity>> getByPais(@PathVariable("pais") String pais,
+    @GetMapping("/nacionalidad/{nacionalidad}")
+    public ResponseEntity<Page<EquipoEntity>> getByNacionalidad(@PathVariable("nacionalidad") String nacionalidad,
             Pageable oPageable) {
-        return ResponseEntity.ok(oEquipoService.getByPais(pais, oPageable));
+        return ResponseEntity.ok(oEquipoService.getByNacionalidad(nacionalidad, oPageable));
     }
 
     @GetMapping("/ganadores")

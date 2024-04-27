@@ -36,8 +36,8 @@ public class EquipoService {
         return oEquipoRepository.findEquiposPorTemporada(anyo, oPageable);
     }
 
-    public Page<EquipoEntity> getByPais(String pais, Pageable oPageable) {
-        return oEquipoRepository.findByPais(pais, oPageable);
+    public Page<EquipoEntity> getByNacionalidad(String nacionalidad, Pageable oPageable) {
+        return oEquipoRepository.findByNacionalidad(nacionalidad, oPageable);
     }
 
     public Page<EquipoEntity> getEquiposGanadores(Pageable oPageable) {

@@ -21,7 +21,7 @@ public interface PilotoEquipoRepository extends JpaRepository<PilotoEquipoEntity
 
     Page<PilotoEquipoEntity> findByEquipoNombre(String nombre, Pageable pageable);
 
-    @Query("SELECT pe FROM PilotoEquipoEntity pe WHERE pe.piloto = :piloto ORDER BY pe.fechaInic")
+    @Query("SELECT pe FROM PilotoEquipoEntity pe WHERE pe.piloto = :piloto ORDER BY pe.fecha_inic")
     List<PilotoEquipoEntity> findByPilotoOrderByFechaInic(@Param("piloto") PilotoEntity piloto);
 
 }
