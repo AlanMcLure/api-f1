@@ -7,11 +7,11 @@ import java.util.List;
 
 import com.f1data.f1data.entity.EquipoEntity;
 import com.f1data.f1data.entity.PilotoEntity;
-import com.f1data.f1data.entity.PilotoEquipoEntity;
+import com.f1data.f1data.entity.ContratoEntity;
 
 public class PilotoDetalles {
     private PilotoEntity piloto;
-    private List<PilotoEquipoEntity> historialEquipos;
+    private List<ContratoEntity> historialEquipos;
     private int puntosConseguidos;
     private int victorias;
     private int podios;
@@ -27,7 +27,7 @@ public class PilotoDetalles {
     public PilotoDetalles() {
     }
 
-    public PilotoDetalles(PilotoEntity piloto, List<PilotoEquipoEntity> historialEquipos, String fechaActual,
+    public PilotoDetalles(PilotoEntity piloto, List<ContratoEntity> historialEquipos, String fechaActual,
             int puntosConseguidos, int victorias, int podios, int carrerasDisputadas,
             int poles, int vueltasRapidas, int abandono, int mejorPosicionCarrera, int vecesMejorPosicionCarrera,
             int mejorPosicionClasificacion, int vecesMejorPosicionClasificacion) {
@@ -142,22 +142,22 @@ public class PilotoDetalles {
         this.vecesMejorPosicionClasificacion = vecesMejorPosicionClasificacion;
     }
 
-    public List<PilotoEquipoEntity> getHistorialEquipos() {
+    public List<ContratoEntity> getHistorialEquipos() {
         return historialEquipos;
     }
 
-    public void setHistorialEquipos(List<PilotoEquipoEntity> historialEquipos) {
+    public void setHistorialEquipos(List<ContratoEntity> historialEquipos) {
         this.historialEquipos = historialEquipos;
     }
 
-    private EquipoEntity obtenerEquipoActual(PilotoEntity piloto, PilotoEquipoEntity[] historialEquipos,
+    private EquipoEntity obtenerEquipoActual(PilotoEntity piloto, ContratoEntity[] historialEquipos,
             String fechaActual) {
         // Convertir la cadena de fecha a un objeto Date
         Date fechaActualDate = parseFecha(fechaActual);
 
         // Iterar por el historial de equipos para encontrar el equipo actual en función
         // de la fecha actual
-        for (PilotoEquipoEntity pilotoEquipo : historialEquipos) {
+        for (ContratoEntity pilotoEquipo : historialEquipos) {
             // Convertir las cadenas de fecha del historial de equipos a objetos Date
             Date fechaInicDate = parseFecha(pilotoEquipo.getFecha_inic());
             Date fechaFinDate = parseFecha(pilotoEquipo.getFecha_fin());

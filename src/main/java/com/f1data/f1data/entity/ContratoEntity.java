@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "piloto_equipo")
-public class PilotoEquipoEntity {
+public class ContratoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,11 +32,11 @@ public class PilotoEquipoEntity {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private String fecha_fin;
 
-    public PilotoEquipoEntity() {
+    public ContratoEntity() {
 
     }
 
-    public PilotoEquipoEntity(Long id, PilotoEntity piloto, EquipoEntity equipo, String fecha_inic, String fecha_fin) {
+    public ContratoEntity(Long id, PilotoEntity piloto, EquipoEntity equipo, String fecha_inic, String fecha_fin) {
         this.id = id;
         this.piloto = piloto;
         this.equipo = equipo;
