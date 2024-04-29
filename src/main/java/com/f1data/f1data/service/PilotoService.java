@@ -21,7 +21,7 @@ public class PilotoService {
     private PilotoRepository oPilotoRepository;
 
     @Autowired
-    private ContratoService oPilotoEquipoService;
+    private ContratoService oContratoRepository;
 
     @Autowired
     private ResultadoCarreraRepository oResultadoCarreraRepository;
@@ -99,7 +99,8 @@ public class PilotoService {
         Integer mejorPosicionCarrera = oResultadoCarreraRepository.mejorPosicionCarreraPorPiloto(idPiloto);
         Integer vecesMejorPosicionCarrera = oResultadoCarreraRepository.cuentaVecesMejorPosicionCarrera(idPiloto);
         Integer puntos = oResultadoCarreraRepository.sumaPuntosPorPiloto(idPiloto);
-        List<ContratoEntity> historialEquipos = oPilotoEquipoService.obtenerHistorialEquipos(piloto);
+        // List<ContratoEntity> historialEquipos =
+        // oContratoRepository.obtenerHistorialEquipos(idPiloto);
 
         PilotoDetalles detalles = new PilotoDetalles();
         detalles.setPiloto(piloto);
@@ -111,7 +112,7 @@ public class PilotoService {
         detalles.setMejorPosicionCarrera(mejorPosicionCarrera != null ? mejorPosicionCarrera : 0);
         detalles.setVecesMejorPosicionCarrera(vecesMejorPosicionCarrera != null ? vecesMejorPosicionCarrera : 0);
         detalles.setPuntosConseguidos(puntos != null ? puntos : 0);
-        detalles.setHistorialEquipos(historialEquipos);
+        // detalles.setHistorialEquipos(historialEquipos);
 
         return detalles;
     }

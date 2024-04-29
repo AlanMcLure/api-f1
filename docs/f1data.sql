@@ -50,8 +50,8 @@ CREATE TABLE gran_premio (
     FOREIGN KEY (circuito_id) REFERENCES circuito(id)
 );
 
--- Tabla PilotoEquipo
-CREATE TABLE piloto_equipo (
+-- Tabla Contrato
+CREATE TABLE contrato (
     id INT PRIMARY KEY AUTO_INCREMENT,
     piloto_id INT,
     equipo_id INT,
@@ -160,7 +160,7 @@ VALUES
   ('Williams Racing', '1977-01-01', 'Reino Unido', '/ruta/inventada/williams.png');
 
 -- Insertar datos aproximados en piloto_equipo (basado en información histórica hasta 2022)
-INSERT INTO piloto_equipo (piloto_id, equipo_id, fecha_inic, fecha_fin)
+INSERT INTO contrato (piloto_id, equipo_id, fecha_inic, fecha_fin)
 VALUES
   -- Lewis Hamilton
   (1, 4, '2007-01-01', '2012-12-31'),

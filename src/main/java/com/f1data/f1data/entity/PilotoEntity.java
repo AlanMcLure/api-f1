@@ -34,9 +34,6 @@ public class PilotoEntity {
 
     private String casco;
 
-    @OneToMany(mappedBy = "piloto")
-    private Set<ContratoEntity> equipos;
-
     public PilotoEntity() {
     }
 
@@ -153,14 +150,6 @@ public class PilotoEntity {
 
     public void setCasco(String casco) {
         this.casco = casco;
-    }
-
-    public Set<ContratoEntity> getEquipos() {
-        return equipos;
-    }
-
-    public void setEquipos(Set<ContratoEntity> equipos) {
-        this.equipos = equipos;
     }
 
 }

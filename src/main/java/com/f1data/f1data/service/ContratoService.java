@@ -15,27 +15,27 @@ import com.f1data.f1data.repository.ContratoRepository;
 public class ContratoService {
 
     @Autowired
-    ContratoRepository oPilotoEquipoRepository;
+    ContratoRepository oContratoRepository;
 
     public Page<ContratoEntity> getPilotosPorEquipo(Long idEquipo, Pageable oPageable) {
-        return oPilotoEquipoRepository.findByEquipoId(idEquipo, oPageable);
+        return oContratoRepository.findByEquipoId(idEquipo, oPageable);
     }
 
     public Page<ContratoEntity> getEquiposPorPiloto(Long idPiloto, Pageable oPageable) {
-        return oPilotoEquipoRepository.findByPilotoId(idPiloto, oPageable);
+        return oContratoRepository.findByPilotoId(idPiloto, oPageable);
     }
 
     public Page<ContratoEntity> getPilotoEquipo(Long idEquipo, Long idPiloto, Pageable oPageable) {
-        return oPilotoEquipoRepository.findByEquipoIdAndPilotoId(idEquipo, idPiloto, oPageable);
+        return oContratoRepository.findByEquipoIdAndPilotoId(idEquipo, idPiloto, oPageable);
     }
 
     public Page<ContratoEntity> getPilotoEquipoPorNombre(String nombre, Pageable oPageable) {
-        return oPilotoEquipoRepository.findByEquipoNombre(nombre, oPageable);
+        return oContratoRepository.findByEquipoNombre(nombre, oPageable);
     }
 
-    public List<ContratoEntity> obtenerHistorialEquipos(PilotoEntity piloto) {
-        // Recuperar el historial de equipos del piloto específico
-        return oPilotoEquipoRepository.findByPilotoOrderByFechaInic(piloto);
-    }
+    // public List<ContratoEntity> obtenerHistorialEquipos(Long idPiloto) {
+    // // Recuperar el historial de equipos del piloto específico
+    // return oContratoRepository.findByPilotoOrderByFechaInic(idPiloto);
+    // }
 
 }

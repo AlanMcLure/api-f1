@@ -28,9 +28,6 @@ public class EquipoEntity {
 
     private String img;
 
-    @OneToMany(mappedBy = "equipo")
-    private Set<ContratoEntity> pilotos;
-
     public EquipoEntity() {
 
     }
@@ -81,14 +78,6 @@ public class EquipoEntity {
 
     public void setImg(String img) {
         this.img = img;
-    }
-
-    public Set<ContratoEntity> getPilotos() {
-        return this.pilotos;
-    }
-
-    public void setPilotos(Set<ContratoEntity> pilotos) {
-        this.pilotos = pilotos;
     }
 
 }
