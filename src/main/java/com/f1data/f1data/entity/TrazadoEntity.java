@@ -25,9 +25,6 @@ public class TrazadoEntity {
     @Column(name = "img")
     private String img;
 
-    @Column(name = "circuito_id")
-    private Long circuitoId;
-
     @Column(name = "fecha_inic")
     private Date fechaInic;
 
@@ -41,11 +38,10 @@ public class TrazadoEntity {
     public TrazadoEntity() {
     }
 
-    public TrazadoEntity(Integer numMetros, String img, Long circuitoId, Date fechaInic, Date fechaFin,
+    public TrazadoEntity(Integer numMetros, String img, Date fechaInic, Date fechaFin,
             CircuitoEntity circuito) {
         this.numMetros = numMetros;
         this.img = img;
-        this.circuitoId = circuitoId;
         this.fechaInic = fechaInic;
         this.fechaFin = fechaFin;
         this.circuito = circuito;
@@ -73,14 +69,6 @@ public class TrazadoEntity {
 
     public void setImg(String img) {
         this.img = img;
-    }
-
-    public Long getCircuitoId() {
-        return circuitoId;
-    }
-
-    public void setCircuitoId(Long circuitoId) {
-        this.circuitoId = circuitoId;
     }
 
     public Date getFechaInic() {
