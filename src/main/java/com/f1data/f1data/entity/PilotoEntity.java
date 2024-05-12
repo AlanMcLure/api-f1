@@ -1,11 +1,14 @@
 package com.f1data.f1data.entity;
 
+import java.util.Set;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -148,4 +151,5 @@ public class PilotoEntity {
     public void setCasco(String casco) {
         this.casco = casco;
     }
+
 }

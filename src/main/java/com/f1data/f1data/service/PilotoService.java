@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.f1data.f1data.dto.PilotoDetalles;
 import com.f1data.f1data.entity.PilotoEntity;
+import com.f1data.f1data.entity.ContratoEntity;
 import com.f1data.f1data.exception.ResourceNotFoundException;
 import com.f1data.f1data.repository.PilotoRepository;
 import com.f1data.f1data.repository.ResultadoCarreraRepository;
@@ -18,6 +19,9 @@ public class PilotoService {
 
     @Autowired
     private PilotoRepository oPilotoRepository;
+
+    @Autowired
+    private ContratoService oContratoRepository;
 
     @Autowired
     private ResultadoCarreraRepository oResultadoCarreraRepository;
@@ -31,12 +35,12 @@ public class PilotoService {
                 .orElseThrow(() -> new ResourceNotFoundException("Piloto no encontrado"));
     }
 
-    public Page<PilotoEntity> getPilotosPorTemporada(int anyo, Pageable oPageable) {
-        return oPilotoRepository.findPilotosPorTemporada(anyo, oPageable);
-    }
-
     public Page<PilotoEntity> getPage(Pageable oPageable) {
         return oPilotoRepository.findAll(oPageable);
+    }
+
+    public Page<PilotoEntity> getPilotosPorTemporada(int anyo, Pageable oPageable) {
+        return oPilotoRepository.findPilotosPorTemporada(anyo, oPageable);
     }
 
     public Page<PilotoEntity> getByNacionalidad(String nacionalidad, Pageable oPageable) {
@@ -95,6 +99,8 @@ public class PilotoService {
         Integer mejorPosicionCarrera = oResultadoCarreraRepository.mejorPosicionCarreraPorPiloto(idPiloto);
         Integer vecesMejorPosicionCarrera = oResultadoCarreraRepository.cuentaVecesMejorPosicionCarrera(idPiloto);
         Integer puntos = oResultadoCarreraRepository.sumaPuntosPorPiloto(idPiloto);
+        // List<ContratoEntity> historialEquipos =
+        // oContratoRepository.obtenerHistorialEquipos(idPiloto);
 
         PilotoDetalles detalles = new PilotoDetalles();
         detalles.setPiloto(piloto);
@@ -106,6 +112,7 @@ public class PilotoService {
         detalles.setMejorPosicionCarrera(mejorPosicionCarrera != null ? mejorPosicionCarrera : 0);
         detalles.setVecesMejorPosicionCarrera(vecesMejorPosicionCarrera != null ? vecesMejorPosicionCarrera : 0);
         detalles.setPuntosConseguidos(puntos != null ? puntos : 0);
+        // detalles.setHistorialEquipos(historialEquipos);
 
         return detalles;
     }

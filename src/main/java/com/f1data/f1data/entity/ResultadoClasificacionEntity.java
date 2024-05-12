@@ -12,94 +12,104 @@ import jakarta.persistence.Table;
 @Table(name = "resultado_clasificacion")
 public class ResultadoClasificacionEntity {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-  private Double vuelta_q1;
+    private Double vuelta_q1;
 
-  private Double vuelta_q2;
+    private Double vuelta_q2;
 
-  private Double vuelta_q3;
+    private Double vuelta_q3;
 
-  private int posicion;
+    private int posicion;
 
-  private boolean penalizacion;
+    private int penalizacion;
 
-  @ManyToOne
-  @JoinColumn(name = "piloto_id")
-  private PilotoEntity piloto;
+    @ManyToOne
+    @JoinColumn(name = "piloto_id")
+    private PilotoEntity piloto;
 
-  @ManyToOne
-  @JoinColumn(name = "clasificacion_id")
-  private ClasificacionEntity clasificacion;
+    @ManyToOne
+    @JoinColumn(name = "clasificacion_id")
+    private ClasificacionEntity clasificacion;
 
-  public ResultadoClasificacionEntity() {
-    
-  }
+    public ResultadoClasificacionEntity() {
+    }
 
-  public Long getId() {
-    return id;
-  }
+    public ResultadoClasificacionEntity(Long id, Double vuelta_q1, Double vuelta_q2, Double vuelta_q3, int posicion,
+            int penalizacion, PilotoEntity piloto, ClasificacionEntity clasificacion) {
+        this.id = id;
+        this.vuelta_q1 = vuelta_q1;
+        this.vuelta_q2 = vuelta_q2;
+        this.vuelta_q3 = vuelta_q3;
+        this.posicion = posicion;
+        this.penalizacion = penalizacion;
+        this.piloto = piloto;
+        this.clasificacion = clasificacion;
+    }
 
-  public void setId(Long id) {
-    this.id = id;
-  }
+    public Long getId() {
+        return id;
+    }
 
-  public Double getVuelta_q1() {
-    return vuelta_q1;
-  }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-  public void setVuelta_q1(Double vuelta_q1) {
-    this.vuelta_q1 = vuelta_q1;
-  }
+    public Double getVuelta_q1() {
+        return vuelta_q1;
+    }
 
-  public Double getVuelta_q2() {
-    return vuelta_q2;
-  }
+    public void setVuelta_q1(Double vuelta_q1) {
+        this.vuelta_q1 = vuelta_q1;
+    }
 
-  public void setVuelta_q2(Double vuelta_q2) {
-    this.vuelta_q2 = vuelta_q2;
-  }
+    public Double getVuelta_q2() {
+        return vuelta_q2;
+    }
 
-  public Double getVuelta_q3() {
-    return vuelta_q3;
-  }
+    public void setVuelta_q2(Double vuelta_q2) {
+        this.vuelta_q2 = vuelta_q2;
+    }
 
-  public void setVuelta_q3(Double vuelta_q3) {
-    this.vuelta_q3 = vuelta_q3;
-  }
+    public Double getVuelta_q3() {
+        return vuelta_q3;
+    }
 
-  public int getPosicion() {
-    return posicion;
-  }
+    public void setVuelta_q3(Double vuelta_q3) {
+        this.vuelta_q3 = vuelta_q3;
+    }
 
-  public void setPosicion(int posicion) {
-    this.posicion = posicion;
-  }
+    public int getPosicion() {
+        return posicion;
+    }
 
-  public boolean isPenalizacion() {
-    return penalizacion;
-  }
+    public void setPosicion(int posicion) {
+        this.posicion = posicion;
+    }
 
-  public void setPenalizacion(boolean penalizacion) {
-    this.penalizacion = penalizacion;
-  }
+    public int getPenalizacion() {
+        return penalizacion;
+    }
+
+    public void setPenalizacion(int penalizacion) {
+        this.penalizacion = penalizacion;
+    }
 
     public PilotoEntity getPiloto() {
-    return piloto;
-  }
+        return piloto;
+    }
 
-  public void setPiloto(PilotoEntity piloto) {
-    this.piloto = piloto;
-  }
+    public void setPiloto(PilotoEntity piloto) {
+        this.piloto = piloto;
+    }
 
-  public ClasificacionEntity getClasificacion() {
-    return clasificacion;
-  }
+    public ClasificacionEntity getClasificacion() {
+        return clasificacion;
+    }
 
-  public void setClasificacion(ClasificacionEntity clasificacion) {
-    this.clasificacion = clasificacion;
-  }
-    
+    public void setClasificacion(ClasificacionEntity clasificacion) {
+        this.clasificacion = clasificacion;
+    }
 }

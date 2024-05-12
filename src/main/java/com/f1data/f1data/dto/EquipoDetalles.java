@@ -1,17 +1,14 @@
 package com.f1data.f1data.dto;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import com.f1data.f1data.entity.EquipoEntity;
 import com.f1data.f1data.entity.PilotoEntity;
-import com.f1data.f1data.entity.ContratoEntity;
 
-public class PilotoDetalles {
-    private PilotoEntity piloto;
-    private List<ContratoEntity> historialEquipos;
+public class EquipoDetalles {
+
+    private EquipoEntity equipo;
+    private List<PilotoEntity> pilotosActuales;
     private int puntosConseguidos;
     private int victorias;
     private int podios;
@@ -24,15 +21,13 @@ public class PilotoDetalles {
     private int mejorPosicionClasificacion;
     private int vecesMejorPosicionClasificacion;
 
-    public PilotoDetalles() {
+    public EquipoDetalles() {
     }
 
-    public PilotoDetalles(PilotoEntity piloto, List<ContratoEntity> historialEquipos, String fechaActual,
-            int puntosConseguidos, int victorias, int podios, int carrerasDisputadas,
+    public EquipoDetalles(EquipoEntity equipo, int puntosConseguidos, int victorias, int podios, int carrerasDisputadas,
             int poles, int vueltasRapidas, int abandono, int mejorPosicionCarrera, int vecesMejorPosicionCarrera,
             int mejorPosicionClasificacion, int vecesMejorPosicionClasificacion) {
-        this.piloto = piloto;
-        this.historialEquipos = historialEquipos;
+        this.equipo = equipo;
         this.puntosConseguidos = puntosConseguidos;
         this.victorias = victorias;
         this.podios = podios;
@@ -46,12 +41,12 @@ public class PilotoDetalles {
         this.vecesMejorPosicionClasificacion = vecesMejorPosicionClasificacion;
     }
 
-    public PilotoEntity getPiloto() {
-        return piloto;
+    public EquipoEntity getEquipo() {
+        return equipo;
     }
 
-    public void setPiloto(PilotoEntity piloto) {
-        this.piloto = piloto;
+    public void setEquipo(EquipoEntity equipo) {
+        this.equipo = equipo;
     }
 
     public int getPuntosConseguidos() {
@@ -140,46 +135,6 @@ public class PilotoDetalles {
 
     public void setVecesMejorPosicionClasificacion(int vecesMejorPosicionClasificacion) {
         this.vecesMejorPosicionClasificacion = vecesMejorPosicionClasificacion;
-    }
-
-    public List<ContratoEntity> getHistorialEquipos() {
-        return historialEquipos;
-    }
-
-    public void setHistorialEquipos(List<ContratoEntity> historialEquipos) {
-        this.historialEquipos = historialEquipos;
-    }
-
-    private EquipoEntity obtenerEquipoActual(PilotoEntity piloto, ContratoEntity[] historialEquipos,
-            String fechaActual) {
-        // Convertir la cadena de fecha a un objeto Date
-        Date fechaActualDate = parseFecha(fechaActual);
-
-        // Iterar por el historial de equipos para encontrar el equipo actual en función
-        // de la fecha actual
-        for (ContratoEntity pilotoEquipo : historialEquipos) {
-            // Convertir las cadenas de fecha del historial de equipos a objetos Date
-            Date fechaInicDate = parseFecha(pilotoEquipo.getFecha_inic());
-            Date fechaFinDate = parseFecha(pilotoEquipo.getFecha_fin());
-
-            // Comprobar si la fecha actual está dentro del rango de fechas del historial de
-            // equipos
-            if (fechaActualDate.after(fechaInicDate) &&
-                    (fechaFinDate == null || fechaActualDate.before(fechaFinDate))) {
-                return pilotoEquipo.getEquipo();
-            }
-        }
-        return null; // Devolver null si no se encuentra ningún equipo para la fecha actual
-    }
-
-    private Date parseFecha(String fecha) {
-        try {
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            return dateFormat.parse(fecha);
-        } catch (ParseException e) {
-            e.printStackTrace();
-            return null;
-        }
     }
 
 }
