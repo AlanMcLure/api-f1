@@ -341,3 +341,22 @@ VALUES
     (91.923, 90.574, 88.672, 18, TRUE, 14, 2),
     (92.215, 91.002, 89.005, 19, TRUE, 8, 2),
     (0, 0, 0, 20, TRUE, 20, 2);
+
+
+INSERT INTO equipo (nombre, fecha_inic, nacionalidad, img) VALUES ('Mercedes', '2020-01-01', 'Alemania', 'mercedes_logo.png');
+INSERT INTO equipo (nombre, fecha_inic, nacionalidad, img) VALUES ('Red Bull Racing', '2020-01-01', 'Austria', 'redbull_logo.png');
+INSERT INTO equipo (nombre, fecha_inic, nacionalidad, img) VALUES ('Ferrari', '2020-01-01', 'Italia', 'ferrari_logo.png');
+INSERT INTO equipo (nombre, fecha_inic, nacionalidad, img) VALUES ('McLaren', '2020-01-01', 'Reino Unido', 'mclaren_logo.png');
+INSERT INTO equipo (nombre, fecha_inic, nacionalidad, img) VALUES ('Alpine', '2020-01-01', 'Francia', 'alpine_logo.png');
+-- Inserta más equipos según sea necesario
+
+
+
+INSERT INTO contrato (piloto_id, equipo_id, fecha_inic, fecha_fin) VALUES (1, 1, '2022-01-01', '2022-12-31');
+INSERT INTO contrato (piloto_id, equipo_id, fecha_inic, fecha_fin) VALUES (2, 2, '2022-01-01', '2022-12-31');
+INSERT INTO contrato (piloto_id, equipo_id, fecha_inic, fecha_fin) VALUES (3, 3, '2022-01-01', '2022-12-31');
+INSERT INTO contrato (piloto_id, equipo_id, fecha_inic, fecha_fin) VALUES (4, 3, '2022-01-01', '2022-12-31');
+INSERT INTO contrato (piloto_id, equipo_id, fecha_inic, fecha_fin) VALUES (5, 1, '2022-01-01', '2022-12-31');
+INSERT INTO contrato (piloto_id, equipo_id, fecha_inic, fecha_fin) VALUES (6, 4, '2022-01-01', '2022-12-31');
+INSERT INTO contrato (piloto_id, equipo_id, fecha_inic, fecha_fin) VALUES (7, 5, '2022-01-01', '2022-12-31');
+
