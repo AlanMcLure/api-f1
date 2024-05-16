@@ -2,6 +2,8 @@ package com.f1data.f1data.entity;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,26 +12,27 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "trazado")
+@Table(name = "trazado", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"circuito_id", "fecha_inic", "fecha_fin"})
+})
 public class TrazadoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "num_metros")
-    private Integer numMetros;
+    private Integer num_metros;
 
-    @Column(name = "img")
     private String img;
 
-    @Column(name = "fecha_inic")
-    private Date fechaInic;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private Date fecha_inic;
 
-    @Column(name = "fecha_fin")
-    private Date fechaFin;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private Date fecha_fin;
 
     @ManyToOne
     @JoinColumn(name = "circuito_id")
@@ -38,12 +41,12 @@ public class TrazadoEntity {
     public TrazadoEntity() {
     }
 
-    public TrazadoEntity(Integer numMetros, String img, Date fechaInic, Date fechaFin,
+    public TrazadoEntity(Integer num_metros, String img, Date fecha_fin, Date fechaFin,
             CircuitoEntity circuito) {
-        this.numMetros = numMetros;
+        this.num_metros = num_metros;
         this.img = img;
-        this.fechaInic = fechaInic;
-        this.fechaFin = fechaFin;
+        this.fecha_fin = fecha_fin;
+        this.fecha_fin = fecha_fin;
         this.circuito = circuito;
     }
 
@@ -56,11 +59,11 @@ public class TrazadoEntity {
     }
 
     public Integer getNumMetros() {
-        return numMetros;
+        return num_metros;
     }
 
-    public void setNumMetros(Integer numMetros) {
-        this.numMetros = numMetros;
+    public void setNumMetros(Integer num_metros) {
+        this.num_metros = num_metros;
     }
 
     public String getImg() {
@@ -72,19 +75,19 @@ public class TrazadoEntity {
     }
 
     public Date getFechaInic() {
-        return fechaInic;
+        return fecha_fin;
     }
 
-    public void setFechaInic(Date fechaInic) {
-        this.fechaInic = fechaInic;
+    public void setFechaInic(Date fecha_fin) {
+        this.fecha_fin = fecha_fin;
     }
 
     public Date getFechaFin() {
-        return fechaFin;
+        return fecha_fin;
     }
 
-    public void setFechaFin(Date fechaFin) {
-        this.fechaFin = fechaFin;
+    public void setFechaFin(Date fecha_fin) {
+        this.fecha_fin = fecha_fin;
     }
 
     public CircuitoEntity getCircuito() {

@@ -1,14 +1,12 @@
 package com.f1data.f1data.entity;
 
-import java.util.Set;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,6 +17,7 @@ public class EquipoEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String nombre;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
@@ -34,6 +33,13 @@ public class EquipoEntity {
 
     public EquipoEntity(Long id, String nombre, String fecha_inic, String nacionalidad, String img) {
         this.id = id;
+        this.nombre = nombre;
+        this.fecha_inic = fecha_inic;
+        this.nacionalidad = nacionalidad;
+        this.img = img;
+    }
+
+    public EquipoEntity(String nombre, String fecha_inic, String nacionalidad, String img) {
         this.nombre = nombre;
         this.fecha_inic = fecha_inic;
         this.nacionalidad = nacionalidad;

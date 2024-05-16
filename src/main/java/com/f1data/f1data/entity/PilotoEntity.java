@@ -1,14 +1,14 @@
 package com.f1data.f1data.entity;
 
-import java.util.Set;
+import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,10 +19,11 @@ public class PilotoEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false) 
     private String nombre;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    private String fecha_nac;
+    private Date fecha_nac;
 
     private String nacionalidad;
 
@@ -37,7 +38,7 @@ public class PilotoEntity {
     public PilotoEntity() {
     }
 
-    public PilotoEntity(Long id, String nombre, String fecha_nac, String nacionalidad, String img, String img_flag,
+    public PilotoEntity(Long id, String nombre, Date fecha_nac, String nacionalidad, String img, String img_flag,
             String lugar_nac, String casco) {
         this.id = id;
         this.nombre = nombre;
@@ -49,7 +50,7 @@ public class PilotoEntity {
         this.casco = casco;
     }
 
-    public PilotoEntity(Long id, String nombre, String fecha_nac, String nacionalidad, String img, String img_flag,
+    public PilotoEntity(Long id, String nombre, Date fecha_nac, String nacionalidad, String img, String img_flag,
             String lugar_nac) {
         this.id = id;
         this.nombre = nombre;
@@ -60,7 +61,7 @@ public class PilotoEntity {
         this.lugar_nac = lugar_nac;
     }
 
-    public PilotoEntity(Long id, String nombre, String fecha_nac, String nacionalidad, String img) {
+    public PilotoEntity(Long id, String nombre, Date fecha_nac, String nacionalidad, String img) {
         this.id = id;
         this.nombre = nombre;
         this.fecha_nac = fecha_nac;
@@ -68,21 +69,21 @@ public class PilotoEntity {
         this.img = img;
     }
 
-    public PilotoEntity(Long id, String nombre, String fecha_nac, String nacionalidad) {
+    public PilotoEntity(Long id, String nombre, Date fecha_nac, String nacionalidad) {
         this.id = id;
         this.nombre = nombre;
         this.fecha_nac = fecha_nac;
         this.nacionalidad = nacionalidad;
     }
 
-    public PilotoEntity(String nombre, String fecha_nac, String nacionalidad, String img) {
+    public PilotoEntity(String nombre, Date fecha_nac, String nacionalidad, String img) {
         this.nombre = nombre;
         this.fecha_nac = fecha_nac;
         this.nacionalidad = nacionalidad;
         this.img = img;
     }
 
-    public PilotoEntity(String nombre, String fecha_nac, String nacionalidad) {
+    public PilotoEntity(String nombre, Date fecha_nac, String nacionalidad) {
         this.nombre = nombre;
         this.fecha_nac = fecha_nac;
         this.nacionalidad = nacionalidad;
@@ -104,11 +105,11 @@ public class PilotoEntity {
         this.nombre = nombre;
     }
 
-    public String getFecha_nac() {
+    public Date getFechaNac() {
         return fecha_nac;
     }
 
-    public void setFecha_nac(String fecha_nac) {
+    public void setFechaNac(Date fecha_nac) {
         this.fecha_nac = fecha_nac;
     }
 

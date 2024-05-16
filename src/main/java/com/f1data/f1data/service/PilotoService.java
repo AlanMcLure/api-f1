@@ -74,7 +74,7 @@ public class PilotoService {
     public PilotoEntity update(PilotoEntity oPilotoEntity) {
         PilotoEntity oPilotoEntityBD = get(oPilotoEntity.getId());
         oPilotoEntityBD.setNombre(oPilotoEntity.getNombre());
-        oPilotoEntityBD.setFecha_nac(oPilotoEntity.getFecha_nac());
+        oPilotoEntityBD.setFechaNac(oPilotoEntity.getFechaNac());
         oPilotoEntityBD.setNacionalidad(oPilotoEntity.getNacionalidad());
         oPilotoEntityBD.setImg(oPilotoEntity.getImg());
         return oPilotoRepository.save(oPilotoEntityBD);

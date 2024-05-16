@@ -19,8 +19,7 @@ public class CarreraEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "num_vueltas")
-    private int numVueltas;
+    private int num_vueltas;
 
     private LocalDateTime fecha_inic;
 
@@ -33,24 +32,24 @@ public class CarreraEntity {
     public CarreraEntity() {
     }
 
-    public CarreraEntity(Long id, int numVueltas, LocalDateTime fecha_inic, boolean safety,
+    public CarreraEntity(Long id, int num_vueltas, LocalDateTime fecha_inic, boolean safety,
             GranPremioEntity granPremio) {
         this.id = id;
-        this.numVueltas = numVueltas;
+        this.num_vueltas = num_vueltas;
         this.fecha_inic = fecha_inic;
         this.safety = safety;
         this.granPremio = granPremio;
     }
 
-    public CarreraEntity(int numVueltas, LocalDateTime fecha_inic, boolean safety, GranPremioEntity granPremio) {
-        this.numVueltas = numVueltas;
+    public CarreraEntity(int num_vueltas, LocalDateTime fecha_inic, boolean safety, GranPremioEntity granPremio) {
+        this.num_vueltas = num_vueltas;
         this.fecha_inic = fecha_inic;
         this.safety = safety;
         this.granPremio = granPremio;
     }
 
-    public CarreraEntity(int numVueltas, LocalDateTime fecha_inic, boolean safety) {
-        this.numVueltas = numVueltas;
+    public CarreraEntity(int num_vueltas, LocalDateTime fecha_inic, boolean safety) {
+        this.num_vueltas = num_vueltas;
         this.fecha_inic = fecha_inic;
         this.safety = safety;
     }
@@ -64,11 +63,11 @@ public class CarreraEntity {
     }
 
     public int getNumVueltas() {
-        return numVueltas;
+        return num_vueltas;
     }
 
-    public void setNumVueltas(int numVueltas) {
-        this.numVueltas = numVueltas;
+    public void setNumVueltas(int num_vueltas) {
+        this.num_vueltas = num_vueltas;
     }
 
     public LocalDateTime getFechaInic() {

@@ -9,9 +9,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "piloto_equipo")
+@Table(name = "piloto_equipo", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"piloto_id", "equipo_id", "fecha_inic", "fecha_fin"})
+})
 public class ContratoEntity {
 
     @Id
@@ -38,6 +41,13 @@ public class ContratoEntity {
 
     public ContratoEntity(Long id, PilotoEntity piloto, EquipoEntity equipo, String fecha_inic, String fecha_fin) {
         this.id = id;
+        this.piloto = piloto;
+        this.equipo = equipo;
+        this.fecha_inic = fecha_inic;
+        this.fecha_fin = fecha_fin;
+    }
+
+    public ContratoEntity(PilotoEntity piloto, EquipoEntity equipo, String fecha_inic, String fecha_fin) {
         this.piloto = piloto;
         this.equipo = equipo;
         this.fecha_inic = fecha_inic;
