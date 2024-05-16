@@ -2,7 +2,8 @@ package com.f1data.f1data.entity;
 
 import java.time.LocalDateTime;
 
-import jakarta.persistence.Column;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,6 +22,7 @@ public class CarreraEntity {
 
     private int num_vueltas;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime fecha_inic;
 
     private boolean safety;
@@ -93,4 +95,5 @@ public class CarreraEntity {
     public void setGranPremio(GranPremioEntity granPremio) {
         this.granPremio = granPremio;
     }
+    
 }

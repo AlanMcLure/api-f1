@@ -129,19 +129,19 @@ public class PilotoEntity {
         this.img = img;
     }
 
-    public String getImg_flag() {
+    public String getImgFlag() {
         return img_flag;
     }
 
-    public void setImg_flag(String img_flag) {
+    public void setImgFlag(String img_flag) {
         this.img_flag = img_flag;
     }
 
-    public String getLugar_nac() {
+    public String getLugarNac() {
         return lugar_nac;
     }
 
-    public void setLugar_nac(String lugar_nac) {
+    public void setLugarNac(String lugar_nac) {
         this.lugar_nac = lugar_nac;
     }
 

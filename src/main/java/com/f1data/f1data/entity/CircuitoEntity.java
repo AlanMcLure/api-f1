@@ -92,4 +92,5 @@ public class CircuitoEntity {
     public void setRegion(String region) {
         this.region = region;
     }
+    
 }

@@ -29,7 +29,7 @@ public class ClasificacionService {
 
     public ClasificacionEntity update(ClasificacionEntity oClasificacionEntity) {
         ClasificacionEntity oClasificacionEntityBD = get(oClasificacionEntity.getId());
-        oClasificacionEntityBD.setFecha_inic(oClasificacionEntity.getFecha_inic());
+        oClasificacionEntityBD.setFechaInic(oClasificacionEntity.getFechaInic());
         oClasificacionEntityBD.setGranPremio(oClasificacionEntity.getGranPremio());
         return oClasificacionRepository.save(oClasificacionEntityBD);
     }

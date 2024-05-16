@@ -2,6 +2,8 @@ package com.f1data.f1data.entity;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,6 +20,7 @@ public class ClasificacionEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime fecha_inic;
 
     @ManyToOne
@@ -46,11 +49,11 @@ public class ClasificacionEntity {
       this.id = id;
     }
 
-    public LocalDateTime getFecha_inic() {
+    public LocalDateTime getFechaInic() {
       return fecha_inic;
     }
 
-    public void setFecha_inic(LocalDateTime fecha_inic) {
+    public void setFechaInic(LocalDateTime fecha_inic) {
       this.fecha_inic = fecha_inic;
     }
 

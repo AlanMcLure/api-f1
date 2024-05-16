@@ -57,27 +57,27 @@ public class ResultadoClasificacionEntity {
         this.id = id;
     }
 
-    public Double getVuelta_q1() {
+    public Double getVueltaQ1() {
         return vuelta_q1;
     }
 
-    public void setVuelta_q1(Double vuelta_q1) {
+    public void setVueltaQ1(Double vuelta_q1) {
         this.vuelta_q1 = vuelta_q1;
     }
 
-    public Double getVuelta_q2() {
+    public Double getVueltaQ2() {
         return vuelta_q2;
     }
 
-    public void setVuelta_q2(Double vuelta_q2) {
+    public void setVueltaQ2(Double vuelta_q2) {
         this.vuelta_q2 = vuelta_q2;
     }
 
-    public Double getVuelta_q3() {
+    public Double getVueltaQ3() {
         return vuelta_q3;
     }
 
-    public void setVuelta_q3(Double vuelta_q3) {
+    public void setVueltaQ3(Double vuelta_q3) {
         this.vuelta_q3 = vuelta_q3;
     }
 
@@ -112,4 +112,5 @@ public class ResultadoClasificacionEntity {
     public void setClasificacion(ClasificacionEntity clasificacion) {
         this.clasificacion = clasificacion;
     }
+    
 }

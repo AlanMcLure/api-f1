@@ -40,9 +40,9 @@ public class GranPremioService {
     public GranPremioEntity update(GranPremioEntity oGranPremioEntity) {
         GranPremioEntity oGranPremioEntityBD = get(oGranPremioEntity.getId());
         oGranPremioEntityBD.setNombre(oGranPremioEntity.getNombre());
-        oGranPremioEntityBD.setFecha_inic(oGranPremioEntity.getFecha_inic());
-        oGranPremioEntityBD.setFecha_fin(oGranPremioEntity.getFecha_fin());
-        oGranPremioEntityBD.setImg_flag(oGranPremioEntity.getImg_flag());
+        oGranPremioEntityBD.setFechaInic(oGranPremioEntity.getFechaInic());
+        oGranPremioEntityBD.setFechaFin(oGranPremioEntity.getFechaFin());
+        oGranPremioEntityBD.setImgFlag(oGranPremioEntity.getImgFlag());
         oGranPremioEntityBD.setImg(oGranPremioEntity.getImg());
         oGranPremioEntityBD.setCircuito(oGranPremioEntity.getCircuito());
         return oGranPremioRepository.save(oGranPremioEntityBD);

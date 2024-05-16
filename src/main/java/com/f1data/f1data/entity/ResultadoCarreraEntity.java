@@ -74,27 +74,27 @@ public class ResultadoCarreraEntity {
         this.id = id;
     }
 
-    public boolean isVuelta_rapida() {
+    public boolean isVueltaRapida() {
         return vuelta_rapida;
     }
 
-    public void setVuelta_rapida(boolean vuelta_rapida) {
+    public void setVueltaRapida(boolean vuelta_rapida) {
         this.vuelta_rapida = vuelta_rapida;
     }
 
-    public int getNum_vueltas_completadas() {
+    public int getNumVueltasCompletadas() {
         return num_vueltas_completadas;
     }
 
-    public void setNum_vueltas_completadas(int num_vueltas_completadas) {
+    public void setNumVueltasCompletadas(int num_vueltas_completadas) {
         this.num_vueltas_completadas = num_vueltas_completadas;
     }
 
-    public Double getTiempo_final() {
+    public Double getTiempoFinal() {
         return tiempo_final;
     }
 
-    public void setTiempo_final(Double tiempo_final) {
+    public void setTiempoFinal(Double tiempo_final) {
         this.tiempo_final = tiempo_final;
     }
 
@@ -129,4 +129,5 @@ public class ResultadoCarreraEntity {
     public void setCarrera(CarreraEntity carrera) {
         this.carrera = carrera;
     }
+    
 }

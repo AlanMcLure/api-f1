@@ -70,11 +70,11 @@ public class ResultadoCarreraService {
         ResultadoCarreraEntity oResultadoCarreraEntityBD = get(oResultadoCarreraEntity.getId());
         oResultadoCarreraEntityBD.setCarrera(oResultadoCarreraEntity.getCarrera());
         oResultadoCarreraEntityBD.setPiloto(oResultadoCarreraEntity.getPiloto());
-        oResultadoCarreraEntityBD.setVuelta_rapida(oResultadoCarreraEntity.isVuelta_rapida());
-        oResultadoCarreraEntityBD.setTiempo_final(oResultadoCarreraEntity.getTiempo_final());
+        oResultadoCarreraEntityBD.setVueltaRapida(oResultadoCarreraEntity.isVueltaRapida());
+        oResultadoCarreraEntityBD.setTiempoFinal(oResultadoCarreraEntity.getTiempoFinal());
         oResultadoCarreraEntityBD.setPosicion(oResultadoCarreraEntity.getPosicion());
-        oResultadoCarreraEntityBD.setNum_vueltas_completadas(oResultadoCarreraEntity.getNum_vueltas_completadas());
-        oResultadoCarreraEntityBD.setTiempo_final(oResultadoCarreraEntity.getTiempo_final());
+        oResultadoCarreraEntityBD.setNumVueltasCompletadas(oResultadoCarreraEntity.getNumVueltasCompletadas());
+        oResultadoCarreraEntityBD.setTiempoFinal(oResultadoCarreraEntity.getTiempoFinal());
         return oResultadoCarreraRepository.save(oResultadoCarreraEntityBD);
     }
 

@@ -1,5 +1,7 @@
 package com.f1data.f1data.entity;
 
+import java.util.Date;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Column;
@@ -21,7 +23,7 @@ public class EquipoEntity {
     private String nombre;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    private String fecha_inic;
+    private Date fecha_inic;
 
     private String nacionalidad;
 
@@ -31,7 +33,7 @@ public class EquipoEntity {
 
     }
 
-    public EquipoEntity(Long id, String nombre, String fecha_inic, String nacionalidad, String img) {
+    public EquipoEntity(Long id, String nombre, Date fecha_inic, String nacionalidad, String img) {
         this.id = id;
         this.nombre = nombre;
         this.fecha_inic = fecha_inic;
@@ -39,7 +41,7 @@ public class EquipoEntity {
         this.img = img;
     }
 
-    public EquipoEntity(String nombre, String fecha_inic, String nacionalidad, String img) {
+    public EquipoEntity(String nombre, Date fecha_inic, String nacionalidad, String img) {
         this.nombre = nombre;
         this.fecha_inic = fecha_inic;
         this.nacionalidad = nacionalidad;
@@ -62,11 +64,11 @@ public class EquipoEntity {
         this.nombre = nombre;
     }
 
-    public String getFecha_inic() {
+    public Date getFechaInic() {
         return fecha_inic;
     }
 
-    public void setFecha_inic(String fecha_inic) {
+    public void setFechaInic(Date fecha_inic) {
         this.fecha_inic = fecha_inic;
     }
 

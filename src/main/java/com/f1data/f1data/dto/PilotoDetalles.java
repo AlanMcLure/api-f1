@@ -150,27 +150,27 @@ public class PilotoDetalles {
         this.historialEquipos = historialEquipos;
     }
 
-    private EquipoEntity obtenerEquipoActual(PilotoEntity piloto, ContratoEntity[] historialEquipos,
-            String fechaActual) {
-        // Convertir la cadena de fecha a un objeto Date
-        Date fechaActualDate = parseFecha(fechaActual);
+    // private EquipoEntity obtenerEquipoActual(PilotoEntity piloto, ContratoEntity[] historialEquipos,
+    //         String fechaActual) {
+    //     // Convertir la cadena de fecha a un objeto Date
+    //     Date fechaActualDate = parseFecha(fechaActual);
 
-        // Iterar por el historial de equipos para encontrar el equipo actual en función
-        // de la fecha actual
-        for (ContratoEntity pilotoEquipo : historialEquipos) {
-            // Convertir las cadenas de fecha del historial de equipos a objetos Date
-            Date fechaInicDate = parseFecha(pilotoEquipo.getFecha_inic());
-            Date fechaFinDate = parseFecha(pilotoEquipo.getFecha_fin());
+    //     // Iterar por el historial de equipos para encontrar el equipo actual en función
+    //     // de la fecha actual
+    //     for (ContratoEntity pilotoEquipo : historialEquipos) {
+    //         // Convertir las cadenas de fecha del historial de equipos a objetos Date
+    //         Date fechaInicDate = parseFecha(pilotoEquipo.getFechaInic());
+    //         Date fechaFinDate = parseFecha(pilotoEquipo.getFechaFin());
 
-            // Comprobar si la fecha actual está dentro del rango de fechas del historial de
-            // equipos
-            if (fechaActualDate.after(fechaInicDate) &&
-                    (fechaFinDate == null || fechaActualDate.before(fechaFinDate))) {
-                return pilotoEquipo.getEquipo();
-            }
-        }
-        return null; // Devolver null si no se encuentra ningún equipo para la fecha actual
-    }
+    //         // Comprobar si la fecha actual está dentro del rango de fechas del historial de
+    //         // equipos
+    //         if (fechaActualDate.after(fechaInicDate) &&
+    //                 (fechaFinDate == null || fechaActualDate.before(fechaFinDate))) {
+    //             return pilotoEquipo.getEquipo();
+    //         }
+    //     }
+    //     return null; // Devolver null si no se encuentra ningún equipo para la fecha actual
+    // }
 
     private Date parseFecha(String fecha) {
         try {

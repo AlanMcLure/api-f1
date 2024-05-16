@@ -95,27 +95,27 @@ public class GranPremioEntity {
         this.nombre = nombre;
     }
 
-    public Date getFecha_inic() {
+    public Date getFechaInic() {
         return fecha_inic;
     }
 
-    public void setFecha_inic(Date fecha_inic) {
+    public void setFechaInic(Date fecha_inic) {
         this.fecha_inic = fecha_inic;
     }
 
-    public Date getFecha_fin() {
+    public Date getFechaFin() {
         return fecha_fin;
     }
 
-    public void setFecha_fin(Date fecha_fin) {
+    public void setFechaFin(Date fecha_fin) {
         this.fecha_fin = fecha_fin;
     }
 
-    public String getImg_flag() {
+    public String getImgFlag() {
         return img_flag;
     }
 
-    public void setImg_flag(String img_flag) {
+    public void setImgFlag(String img_flag) {
         this.img_flag = img_flag;
     }
 
@@ -134,4 +134,5 @@ public class GranPremioEntity {
     public void setCircuito(CircuitoEntity circuito) {
         this.circuito = circuito;
     }
+    
 }
