@@ -38,6 +38,17 @@ public class TrazadoEntity {
     private CircuitoEntity circuito;
 
     public TrazadoEntity() {
+
+    }
+
+    public TrazadoEntity(Long id, Integer num_metros, String img, Date fecha_fin, Date fechaFin,
+            CircuitoEntity circuito) {
+        this.id = id;
+        this.num_metros = num_metros;
+        this.img = img;
+        this.fecha_fin = fecha_fin;
+        this.fecha_fin = fecha_fin;
+        this.circuito = circuito;
     }
 
     public TrazadoEntity(Integer num_metros, String img, Date fecha_fin, Date fechaFin,

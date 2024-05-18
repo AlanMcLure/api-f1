@@ -1,5 +1,6 @@
 package com.f1data.f1data.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,10 +17,13 @@ public class ResultadoClasificacionEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(precision = 10, scale = 3)
     private Double vuelta_q1;
 
+    @Column(precision = 10, scale = 3)
     private Double vuelta_q2;
 
+    @Column(precision = 10, scale = 3)
     private Double vuelta_q3;
 
     private int posicion;
@@ -40,6 +44,17 @@ public class ResultadoClasificacionEntity {
     public ResultadoClasificacionEntity(Long id, Double vuelta_q1, Double vuelta_q2, Double vuelta_q3, int posicion,
             int penalizacion, PilotoEntity piloto, ClasificacionEntity clasificacion) {
         this.id = id;
+        this.vuelta_q1 = vuelta_q1;
+        this.vuelta_q2 = vuelta_q2;
+        this.vuelta_q3 = vuelta_q3;
+        this.posicion = posicion;
+        this.penalizacion = penalizacion;
+        this.piloto = piloto;
+        this.clasificacion = clasificacion;
+    }
+
+    public ResultadoClasificacionEntity(Double vuelta_q1, Double vuelta_q2, Double vuelta_q3, int posicion,
+            int penalizacion, PilotoEntity piloto, ClasificacionEntity clasificacion) {
         this.vuelta_q1 = vuelta_q1;
         this.vuelta_q2 = vuelta_q2;
         this.vuelta_q3 = vuelta_q3;
