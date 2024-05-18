@@ -19,4 +19,5 @@ public interface CircuitoRepository extends JpaRepository<CircuitoEntity, Long> 
     Page<CircuitoEntity> findByCiudad(String ciudad, Pageable oPageable);
 
     Page<CircuitoEntity> findByRegion(String region, Pageable oPageable);
+    
 }

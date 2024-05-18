@@ -31,7 +31,7 @@ public interface ResultadoClasificacionRepository extends JpaRepository<Resultad
 
     // Consultas para un piloto específico
     @Query(value = "SELECT COUNT(*) FROM resultado_clasificacion WHERE piloto_id = :idPiloto AND posicion = 1", nativeQuery = true)
-    Integer cuentaVictoriasPorPiloto(Long idPiloto);
+    Integer cuentaPolesPorPiloto(Long idPiloto);
 
     @Query(value = "SELECT COUNT(*) FROM resultado_clasificacion WHERE piloto_id = :idPiloto AND posicion <= 2", nativeQuery = true)
     Integer cuentaPrimerasFilasPorPiloto(Long idPiloto);

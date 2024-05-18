@@ -17,13 +17,10 @@ public class ResultadoClasificacionEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(precision = 10, scale = 3)
     private Double vuelta_q1;
 
-    @Column(precision = 10, scale = 3)
     private Double vuelta_q2;
 
-    @Column(precision = 10, scale = 3)
     private Double vuelta_q3;
 
     private int posicion;

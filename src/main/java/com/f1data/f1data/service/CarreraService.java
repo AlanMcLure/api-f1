@@ -20,11 +20,6 @@ public class CarreraService {
                 .orElseThrow(() -> new ResourceNotFoundException("Carrera no encontrada"));
     }
 
-    // public CarreraEntity getCarreraByNumVueltas(int num_vueltas) {
-    // return oCarreraRepository.findByNumVueltas(num_vueltas)
-    // .orElseThrow(() -> new ResourceNotFoundException("Carrera no encontrada"));
-    // }
-
     public Page<CarreraEntity> getPage(Pageable oPageable) {
         return oCarreraRepository.findAll(oPageable);
     }

@@ -11,4 +11,5 @@ import com.f1data.f1data.entity.CarreraEntity;
 public interface CarreraRepository extends JpaRepository<CarreraEntity, Long> {
 
     Page<CarreraEntity> findByNumVueltas(int num_vueltas, Pageable pageable);
+
 }

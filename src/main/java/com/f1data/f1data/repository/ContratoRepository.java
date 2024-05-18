@@ -17,8 +17,7 @@ public interface ContratoRepository extends JpaRepository<ContratoEntity, Long> 
 
     Page<ContratoEntity> findByEquipoNombre(String nombre, Pageable pageable);
 
-    // @Query("SELECT c FROM Contrato c WHERE c.piloto.id = :idPiloto ORDER BY
-    // c.fecha_inic")
-    // List<ContratoEntity> findByPilotoOrderByFechaInic(Long idPiloto);
+    @Query(value = "SELECT c FROM Contrato c WHERE c.piloto.id = :idPiloto ORDER BY c.fecha_inic", nativeQuery = true)
+    Page<ContratoEntity> findByPilotoOrderByFechaInic(Long idPiloto, Pageable pageable);
 
 }

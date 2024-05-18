@@ -21,7 +21,6 @@ public class ResultadoCarreraEntity {
 
     private int num_vueltas_completadas;
 
-    @Column(precision = 10, scale = 3)
     private Double tiempo_final;
 
     private int posicion;
