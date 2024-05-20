@@ -33,12 +33,7 @@ public class CarreraService {
     }
 
     public CarreraEntity update(CarreraEntity oCarreraEntity) {
-        CarreraEntity oCarreraEntityBD = get(oCarreraEntity.getId());
-        oCarreraEntityBD.setNumVueltas(oCarreraEntity.getNumVueltas());
-        oCarreraEntityBD.setFechaInic(oCarreraEntity.getFechaInic());
-        oCarreraEntityBD.setSafety(oCarreraEntity.isSafety());
-        oCarreraEntityBD.setGranPremio(oCarreraEntity.getGranPremio());
-        return oCarreraRepository.save(oCarreraEntityBD);
+        return oCarreraRepository.save(oCarreraEntity);
     }
 
     public Long delete(Long id) {
