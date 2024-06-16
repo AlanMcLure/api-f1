@@ -1,14 +1,10 @@
 package com.f1data.f1data.dto;
 
-import java.util.List;
-
 import com.f1data.f1data.entity.EquipoEntity;
-import com.f1data.f1data.entity.PilotoEntity;
 
 public class EquipoDetalles {
 
     private EquipoEntity equipo;
-    private List<PilotoEntity> pilotosActuales;
     private int puntosConseguidos;
     private int victorias;
     private int podios;
