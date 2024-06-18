@@ -11,7 +11,7 @@ import com.f1data.f1data.entity.ContratoEntity;
 
 public class PilotoDetalles {
     private PilotoEntity piloto;
-    private List<ContratoEntity> historialEquipos;
+    // private historialEquipos
     private int puntosConseguidos;
     private int victorias;
     private int podios;
@@ -27,12 +27,11 @@ public class PilotoDetalles {
     public PilotoDetalles() {
     }
 
-    public PilotoDetalles(PilotoEntity piloto, List<ContratoEntity> historialEquipos, String fechaActual,
+    public PilotoDetalles(PilotoEntity piloto, String fechaActual,
             int puntosConseguidos, int victorias, int podios, int carrerasDisputadas,
             int poles, int vueltasRapidas, int abandono, int mejorPosicionCarrera, int vecesMejorPosicionCarrera,
             int mejorPosicionClasificacion, int vecesMejorPosicionClasificacion) {
         this.piloto = piloto;
-        this.historialEquipos = historialEquipos;
         this.puntosConseguidos = puntosConseguidos;
         this.victorias = victorias;
         this.podios = podios;
@@ -140,14 +139,6 @@ public class PilotoDetalles {
 
     public void setVecesMejorPosicionClasificacion(int vecesMejorPosicionClasificacion) {
         this.vecesMejorPosicionClasificacion = vecesMejorPosicionClasificacion;
-    }
-
-    public List<ContratoEntity> getHistorialEquipos() {
-        return historialEquipos;
-    }
-
-    public void setHistorialEquipos(List<ContratoEntity> historialEquipos) {
-        this.historialEquipos = historialEquipos;
     }
 
     // private EquipoEntity obtenerEquipoActual(PilotoEntity piloto, ContratoEntity[] historialEquipos,
