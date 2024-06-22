@@ -141,6 +141,8 @@ public class PilotoDetalles {
         this.vecesMejorPosicionClasificacion = vecesMejorPosicionClasificacion;
     }
 
+    // funcion para obtener el equipo actual
+
     // private EquipoEntity obtenerEquipoActual(PilotoEntity piloto, ContratoEntity[] historialEquipos,
     //         String fechaActual) {
     //     // Convertir la cadena de fecha a un objeto Date
