@@ -13,6 +13,7 @@ public class PilotoDetalles {
     private PilotoEntity piloto;
     // private historialEquipos
     private int puntosConseguidos;
+    private int numero;
     private int victorias;
     private int podios;
     private int carrerasDisputadas;
