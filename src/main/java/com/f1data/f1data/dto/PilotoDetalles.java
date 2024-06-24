@@ -29,11 +29,12 @@ public class PilotoDetalles {
     }
 
     public PilotoDetalles(PilotoEntity piloto, String fechaActual,
-            int puntosConseguidos, int victorias, int podios, int carrerasDisputadas,
+            int puntosConseguidos, int numero, int victorias, int podios, int carrerasDisputadas,
             int poles, int vueltasRapidas, int abandono, int mejorPosicionCarrera, int vecesMejorPosicionCarrera,
             int mejorPosicionClasificacion, int vecesMejorPosicionClasificacion) {
         this.piloto = piloto;
         this.puntosConseguidos = puntosConseguidos;
+        this.numero = numero;
         this.victorias = victorias;
         this.podios = podios;
         this.carrerasDisputadas = carrerasDisputadas;
@@ -60,6 +61,14 @@ public class PilotoDetalles {
 
     public void setPuntosConseguidos(int puntosConseguidos) {
         this.puntosConseguidos = puntosConseguidos;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 
     public int getVictorias() {
