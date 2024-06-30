@@ -5,7 +5,7 @@ import com.f1data.f1data.entity.EquipoEntity;
 public class EquipoDetalles {
 
     private EquipoEntity equipo;
-    // private historialPilotos
+    // private historialPilotos;
     private int puntosConseguidos;
     private int victorias;
     private int podios;
